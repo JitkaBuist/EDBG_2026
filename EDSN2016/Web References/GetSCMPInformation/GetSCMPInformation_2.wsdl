@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:getscmpinformation:2:standard" xmlns:ccma2="urn:nedu:edsn:data:getscmpinformationresponse:2:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:getscmpinformationrequest:1:standard" xmlns:ccma3="urn:edsn:edsn:data:soapfault:1:standard" targetNamespace="urn:nedu:edsn:service:getscmpinformation:2:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="GetSCMPInformationRequest_1p0.xsd" namespace="urn:nedu:edsn:data:getscmpinformationrequest:1:standard" />
+      <xsd:import schemaLocation="GetSCMPInformationResponse_2p1.xsd" namespace="urn:nedu:edsn:data:getscmpinformationresponse:2:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="GetSCMPInformationRequestEnvelope">
+    <part name="part1" element="ccma1:GetSCMPInformationRequestEnvelope" />
+  </message>
+  <message name="GetSCMPInformationResponseEnvelope">
+    <part name="part1" element="ccma2:GetSCMPInformationResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma3:SOAPFault" />
+  </message>
+  <portType name="GetSCMPInformationPortType">
+    <operation name="GetSCMPInformation">
+      <input message="ws:GetSCMPInformationRequestEnvelope" />
+      <output message="ws:GetSCMPInformationResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="GetSCMPInformationBinding" type="ws:GetSCMPInformationPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="GetSCMPInformation">
+      <soap:operation soapAction="urn:GetSCMPInformation" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="GetSCMPInformation">
+    <port name="GetSCMPInformationPort" binding="ws:GetSCMPInformationBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderGetSCMPInformationRespondingActivity" />
+    </port>
+  </service>
+</definitions>

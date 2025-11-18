@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:ccma5="urn:edsn:edsn:data:soapfault:1:standard" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:noticeeos:1:standard" xmlns:ccma4="urn:nedu:edsn:data:noticeeosresponse:1:standard" xmlns:ccma2="urn:nedu:edsn:data:noticeeosacknowledgement:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:noticeeosnotification:1:standard" xmlns:ccma3="urn:nedu:edsn:data:noticeeosrequest:1:standard" targetNamespace="urn:nedu:edsn:service:noticeeos:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="NoticeEOSNotification_1p3.xsd" namespace="urn:nedu:edsn:data:noticeeosnotification:1:standard" />
+      <xsd:import schemaLocation="NoticeEOSAcknowledgement_1p0.xsd" namespace="urn:nedu:edsn:data:noticeeosacknowledgement:1:standard" />
+      <xsd:import schemaLocation="NoticeEOSRequest_1p0.xsd" namespace="urn:nedu:edsn:data:noticeeosrequest:1:standard" />
+      <xsd:import schemaLocation="NoticeEOSResponse_1p3.xsd" namespace="urn:nedu:edsn:data:noticeeosresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="NoticeEOSNotificationEnvelope">
+    <part name="part1" element="ccma1:NoticeEOSNotificationEnvelope" />
+  </message>
+  <message name="NoticeEOSAcknowledgementEnvelope">
+    <part name="part1" element="ccma2:NoticeEOSAcknowledgementEnvelope" />
+  </message>
+  <message name="NoticeEOSRequestEnvelope">
+    <part name="part1" element="ccma3:NoticeEOSRequestEnvelope" />
+  </message>
+  <message name="NoticeEOSResponseEnvelope">
+    <part name="part1" element="ccma4:NoticeEOSResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma5:SOAPFault" />
+  </message>
+  <portType name="NoticeEOSPortType">
+    <operation name="NoticeEOSNotification">
+      <input message="ws:NoticeEOSNotificationEnvelope" />
+      <output message="ws:NoticeEOSAcknowledgementEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="NoticeEOSRequest">
+      <input message="ws:NoticeEOSRequestEnvelope" />
+      <output message="ws:NoticeEOSResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="NoticeEOSBinding" type="ws:NoticeEOSPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="NoticeEOSNotification">
+      <soap:operation soapAction="urn:NoticeEOSNotification" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="NoticeEOSRequest">
+      <soap:operation soapAction="urn:NoticeEOSRequest" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="NoticeEOS">
+    <port name="NoticeEOSPort" binding="ws:NoticeEOSBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderNoticeEOSRespondingActivity" />
+    </port>
+  </service>
+</definitions>

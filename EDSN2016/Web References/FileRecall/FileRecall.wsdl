@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns="urn:nl:edsn:service:filerecall:trans:1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sft="urn:edsn:edsn:data:soapfault:1:standard" xmlns:bm10="urn:nl:edsn:service:filerecallresponse:env:1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bm9="urn:nl:edsn:service:filerecallrequest:env:1" name="FileRecall" targetNamespace="urn:nl:edsn:service:filerecall:trans:1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>version 1.1 dated 19/10/2012</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="urn:nl:edsn:service:filerecall:trans:1">
+      <xs:import schemaLocation="FileRecallRequest_1p0.xsd" namespace="urn:nl:edsn:service:filerecallrequest:env:1" />
+      <xs:import schemaLocation="FileRecallResponse_1p0.xsd" namespace="urn:nl:edsn:service:filerecallresponse:env:1" />
+      <xs:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="RequestMsg">
+    <wsdl:part name="FileRecallRequestEnvelope" element="bm9:FileRecallRequestEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="PositiveResponseMsg">
+    <wsdl:part name="FileRecallResponseEnvelope" element="bm10:FileRecallResponseEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="SOAPFault">
+    <wsdl:part name="fault" element="sft:SOAPFault" />
+  </wsdl:message>
+  <wsdl:portType name="FileRecall">
+    <wsdl:operation name="FileRecallRequest">
+      <wsdl:input message="tns:RequestMsg" />
+      <wsdl:output message="tns:PositiveResponseMsg" />
+      <wsdl:fault name="fault" message="tns:SOAPFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FileRecallBinding" type="tns:FileRecall">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FileRecallRequest">
+      <soap:operation soapAction="FileRecallRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="FileRecallRequestEnvelope" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="FileRecallResponseEnvelope" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FileRecallService">
+    <wsdl:port name="FileRecallPort" binding="tns:FileRecallBinding">
+      <soap:address location="http://localhost:7001/b2b/bulk/generic/FileRecall" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

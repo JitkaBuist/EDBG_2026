@@ -1,0 +1,1469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{500CA4BD-1F45-4B5B-9D15-8D1F44F40D68}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>nl.Energie.EDSN</RootNamespace>
+    <AssemblyName>Energie.EDSN</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Primitives, Version=4.10.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Primitives.4.10.3\lib\net461\System.ServiceModel.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Security, Version=4.10.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceModel.Security.4.10.3\lib\net461\System.ServiceModel.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdditionalPaymentSpecification.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="FinalPaymentDeclaration.cs" />
+    <Compile Include="ObligationSpecification.cs" />
+    <Compile Include="PaymentDeclaration.cs" />
+    <Compile Include="PaymentSpecification.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SOAPfault.cs" />
+    <Compile Include="Web References\ChangeOfAllocationMethod\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ChangeOfPV\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ChangeOfSupplierBatch\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ChangeOfSupplier\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\CKIdentification\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\EndOfSupplyBatch\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\EndOfSupply\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\FileCheckOut\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\FileDownload\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\FileList\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\FileProcessing\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\FileRecall\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\FileUpload\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\GetMeteringPointMP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\GetMPInformation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\GetSCMPInformation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\LossGainRejectUpdate\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MasterDataBatch\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MasterdataGain\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MasterDataUpdate\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MasterData\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MeasureCorrection\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MeteringPointInformation\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MeterReadingDispute\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MeterReading\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MoveInBatch\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MoveIn\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MoveOutBatch\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\MoveOut\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\NameChangeBatch\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\NameChange\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\NoticeEOS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\P4GetHistoricalSmartMeterReadingDifferential\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\P4GetHistoricalSmartMeterReading\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\P4Subscription\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\P4\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SearchMeteringPointsMP\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\MasterDataGain_1p1\MasterDataGain_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MasterdataGain\</RelPath>
+      <UpdateFromURL>C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\MasterDataGain_1p1\MasterDataGain_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_MasterdataGain_MasterDataGain</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\MeasureCorrection_1p0\MeasureCorrection_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MeasureCorrection\</RelPath>
+      <UpdateFromURL>C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\MeasureCorrection_1p0\MeasureCorrection_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_MeasureCorrection_MeasureCorrection</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SectorRelease 2017\Berichtdefinities\CKIdentification_1p0\CKIdentification_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\CKIdentification\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SectorRelease 2017\Berichtdefinities\CKIdentification_1p0\CKIdentification_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_CKIdentification_1_CKIdentification</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\GetMeteringPointMP_2p1\GetMeteringPointMP_2.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\GetMeteringPointMP\</RelPath>
+      <UpdateFromURL>C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\GetMeteringPointMP_2p1\GetMeteringPointMP_2.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_GetMeteringPointMP_GetMeteringPointMP</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\GetMPInformation_2p1\GetMPInformation_2.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\GetMPInformation\</RelPath>
+      <UpdateFromURL>C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\GetMPInformation_2p1\GetMPInformation_2.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_GetMPInformation_GetMPInformation</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\GetSCMPInformation_2p1\GetSCMPInformation_2.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\GetSCMPInformation\</RelPath>
+      <UpdateFromURL>C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\GetSCMPInformation_2p1\GetSCMPInformation_2.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_GetSCMPInformation_GetSCMPInformation</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\SearchMeteringPointsMP_1p3\SearchMeteringPointsMP_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SearchMeteringPointsMP\</RelPath>
+      <UpdateFromURL>C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\SearchMeteringPointsMP_1p3\SearchMeteringPointsMP_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_SearchMeteringPointsMP_SearchMeteringPointsMP</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SR2016\Projectdocumentatie-Sectorrelease-2016-1-van-4\Berichtdefinities\009.1.18 - Berichtdefinitie ChangeOfAllocationMethod_1.0 %28ALV NEDU 20160309-009.1.18%29\ChangeOfAllocationMethod_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ChangeOfAllocationMethod\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SR2016\Projectdocumentatie-Sectorrelease-2016-1-van-4\Berichtdefinities\009.1.18 - Berichtdefinitie ChangeOfAllocationMethod_1.0 %28ALV NEDU 20160309-009.1.18%29\ChangeOfAllocationMethod_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_ChangeOfAllocationMethod_ChangeOfAllocationMethod</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SR2016\Projectdocumentatie-Sectorrelease-2016-1-van-4\Berichtdefinities\009.1.19 - Berichtdefinitie ChangeOfSupplier_1.1 %28ALV NEDU 20160309-009.1.19%29\ChangeOfSupplier_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ChangeOfSupplier\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SR2016\Projectdocumentatie-Sectorrelease-2016-1-van-4\Berichtdefinities\009.1.19 - Berichtdefinitie ChangeOfSupplier_1.1 %28ALV NEDU 20160309-009.1.19%29\ChangeOfSupplier_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_ChangeOfSupplier_ChangeOfSupplier</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SR2016\Projectdocumentatie-Sectorrelease-2016-1-van-4\Berichtdefinities\009.1.20 - Berichtdefinitie ChangeOfSupplierBatch_1.1 %28ALV NEDU 20160309-009.1.20%29\ChangeOfSupplierBatch_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ChangeOfSupplierBatch\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SR2016\Projectdocumentatie-Sectorrelease-2016-1-van-4\Berichtdefinities\009.1.20 - Berichtdefinitie ChangeOfSupplierBatch_1.1 %28ALV NEDU 20160309-009.1.20%29\ChangeOfSupplierBatch_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_ChangeOfSupplierBatch_ChangeOfSupplierBatch</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\MasterData_2p1\MasterData_2.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MasterData\</RelPath>
+      <UpdateFromURL>C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\MasterData_2p1\MasterData_2.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_MasterData_MasterData</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\MasterDataUpdate_2p1\MasterDataUpdate_2p1\MasterDataUpdate_2.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MasterDataUpdate\</RelPath>
+      <UpdateFromURL>C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\MasterDataUpdate_2p1\MasterDataUpdate_2p1\MasterDataUpdate_2.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_MasterDataUpdate_MasterDataUpdate</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SR2016\Projectdocumentatie-Sectorrelease-2016-1-van-4\Berichtdefinities\009.1.24 - Berichtdefinitie  MeteringPointInformation_1.3 %28ALV NEDU 20160309-009.1.24%29\MeteringPointInformation_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MeteringPointInformation\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SR2016\Projectdocumentatie-Sectorrelease-2016-1-van-4\Berichtdefinities\009.1.24 - Berichtdefinitie  MeteringPointInformation_1.3 %28ALV NEDU 20160309-009.1.24%29\MeteringPointInformation_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_MeteringPointInformation_MeteringPointInformation</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\MoveIn_1p2\MoveIn_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MoveIn\</RelPath>
+      <UpdateFromURL>C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\MoveIn_1p2\MoveIn_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_MoveIn_MoveIn</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\MoveInBatch_1p2\MoveInBatch_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MoveInBatch\</RelPath>
+      <UpdateFromURL>C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\MoveInBatch_1p2\MoveInBatch_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_MoveInBatch_MoveInBatch</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SR2016\Projectdocumentatie-Sectorrelease-2016-1-van-4\Berichtdefinities\009.1.28 - Berichtdefinitie MeterReading_1.2 %28ALV NEDU 20160309-009.1.28%29\MeterReading_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MeterReading\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SR2016\Projectdocumentatie-Sectorrelease-2016-1-van-4\Berichtdefinities\009.1.28 - Berichtdefinitie MeterReading_1.2 %28ALV NEDU 20160309-009.1.28%29\MeterReading_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_MeterReading_MeterReading</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\ChangeOfPV_1p0\ChangeOfPV_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ChangeOfPV\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\ChangeOfPV_1p0\ChangeOfPV_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_ChangeOfPV_ChangeOfPV</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\EndOfSupplyBatch_1p0\EndOfSupplyBatch_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\EndOfSupplyBatch\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\EndOfSupplyBatch_1p0\EndOfSupplyBatch_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_EndOfSupplyBatch_EndOfSupplyBatch</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\EndOfSupply_1p0\EndOfSupply_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\EndOfSupply\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\EndOfSupply_1p0\EndOfSupply_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_EndOfSupply_EndOfSupply</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\LossGainRejectUpdate_1p0\LossGainRejectUpdate_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\LossGainRejectUpdate\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\LossGainRejectUpdate_1p0\LossGainRejectUpdate_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_LossGainRejectUpdate_LossGainRejectUpdate</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SectorRelease 2017\Berichtdefinities\MeteringPointBatch_2p1\MasterDataBatch_2.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MasterDataBatch\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SectorRelease 2017\Berichtdefinities\MeteringPointBatch_2p1\MasterDataBatch_2.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_MasterDataBatch_MasterDataBatch</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\MeterReadingDispute_1p1\MeterReadingDispute_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MeterReadingDispute\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\MeterReadingDispute_1p1\MeterReadingDispute_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_MeterReadingDispute_MeterReadingDispute</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\MoveOutBatch_1p0\MoveOutBatch_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MoveOutBatch\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\MoveOutBatch_1p0\MoveOutBatch_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_MoveOutBatch_MoveOutBatch</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\MoveOut_1p0\MoveOut_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\MoveOut\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\MoveOut_1p0\MoveOut_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_MoveOut_MoveOut</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\NameChangeBatch_1p1\NameChangeBatch_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\NameChangeBatch\</RelPath>
+      <UpdateFromURL>C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\NameChangeBatch_1p1\NameChangeBatch_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_NameChangeBatch_NameChangeBatch</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\NameChange_1p1\NameChange_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\NameChange\</RelPath>
+      <UpdateFromURL>C:\OneDrive\OneDrive - Mink I.T\Documenten\EDBG\SR2020\Berichtdefinities\NameChange_1p1\NameChange_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_NameChange_NameChange</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\NoticeEOS_1p3\NoticeEOS_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\NoticeEOS\</RelPath>
+      <UpdateFromURL>C:\Users\Pieter\Documents\EDBG\SR2016\XSD pre SR2016\NoticeEOS_1p3\NoticeEOS_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EDSN2016_NoticeEOS_NoticeEOS</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\piete\OneDrive - Mink I.T\Documenten\EDBG\NajaarsRelease 2021\P4\GetHistoricalSmartMeterReadingSeriesDifferential_1p0\GetHistoricalSmartMeterReadingSeriesDifferential_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\P4GetHistoricalSmartMeterReadingDifferential\</RelPath>
+      <UpdateFromURL>C:\Users\piete\OneDrive - Mink I.T\Documenten\EDBG\NajaarsRelease 2021\P4\GetHistoricalSmartMeterReadingSeriesDifferential_1p0\GetHistoricalSmartMeterReadingSeriesDifferential_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_P4GetHistoricalSmartMeterReadingDifferential_GetHistoricalSmartMeterReadingSeriesDifferential</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\piete\OneDrive - Mink I.T\Documenten\EDBG\NajaarsRelease 2021\P4\GetHistoricalSmartMeterReadingSeries_1p0\GetHistoricalSmartMeterReadingSeries_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\P4GetHistoricalSmartMeterReading\</RelPath>
+      <UpdateFromURL>C:\Users\piete\OneDrive - Mink I.T\Documenten\EDBG\NajaarsRelease 2021\P4\GetHistoricalSmartMeterReadingSeries_1p0\GetHistoricalSmartMeterReadingSeries_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_P4GetHistoricalSmartMeterReading_GetHistoricalSmartMeterReadingSeries</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="C:\Users\piete\OneDrive - Mink I.T\Documenten\EDBG\NajaarsRelease 2021\P4\Subscriptions_1p0\Subscriptions_1.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\P4Subscription\</RelPath>
+      <UpdateFromURL>C:\Users\piete\OneDrive - Mink I.T\Documenten\EDBG\NajaarsRelease 2021\P4\Subscriptions_1p0\Subscriptions_1.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_P4Subscription_Subscriptions</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://127.0.0.1/FileCheckOut.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\FileCheckOut\</RelPath>
+      <UpdateFromURL>http://127.0.0.1/FileCheckOut.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_FileCheckOut_FileCheckOutService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://127.0.0.1/FileDownload.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\FileDownload\</RelPath>
+      <UpdateFromURL>http://127.0.0.1/FileDownload.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_FileDownload_FileDownloadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://127.0.0.1/FileList.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\FileList\</RelPath>
+      <UpdateFromURL>http://127.0.0.1/FileList.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_FileList_FileListService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://127.0.0.1/FileProcessing.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\FileProcessing\</RelPath>
+      <UpdateFromURL>http://127.0.0.1/FileProcessing.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_FileProcessing_FileProcessingService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://127.0.0.1/FileRecall.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\FileRecall\</RelPath>
+      <UpdateFromURL>http://127.0.0.1/FileRecall.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_FileRecall_FileRecallService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://127.0.0.1/FileUpload.wsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\FileUpload\</RelPath>
+      <UpdateFromURL>http://127.0.0.1/FileUpload.wsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_FileUpload_FileUploadService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://p4-test.edsn.nl/P4BatchVerzoekMeterstand/P4Port%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\P4\</RelPath>
+      <UpdateFromURL>https://p4-test.edsn.nl/P4BatchVerzoekMeterstand/P4Port%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Energie_EDSN_P4_P4</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ChangeOfAllocationMethod\ChangeOfAllocationMethodRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ChangeOfAllocationMethod\ChangeOfAllocationMethodResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ChangeOfAllocationMethod\ChangeOfAllocationMethodResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ChangeOfAllocationMethod\ChangeOfAllocationMethod_1.wsdl" />
+    <None Include="Web References\ChangeOfAllocationMethod\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ChangeOfAllocationMethod\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ChangeOfPV\ChangeOfPVRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ChangeOfPV\ChangeOfPVResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ChangeOfPV\ChangeOfPVResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ChangeOfPV\ChangeOfPV_1.wsdl" />
+    <None Include="Web References\ChangeOfPV\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ChangeOfPV\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ChangeOfSupplierBatch\ChangeOfSupplierBatchRequest_1p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ChangeOfSupplierBatch\ChangeOfSupplierBatchResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ChangeOfSupplierBatch\ChangeOfSupplierBatchResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ChangeOfSupplierBatch\ChangeOfSupplierBatch_1.wsdl" />
+    <None Include="Web References\ChangeOfSupplierBatch\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ChangeOfSupplierBatch\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ChangeOfSupplier\ChangeOfSupplierRequest_1p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ChangeOfSupplier\ChangeOfSupplierResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ChangeOfSupplier\ChangeOfSupplierResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\ChangeOfSupplier\ChangeOfSupplier_1.wsdl" />
+    <None Include="Web References\ChangeOfSupplier\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ChangeOfSupplier\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\CKIdentification\CKIdentification_1.wsdl" />
+    <None Include="Web References\CKIdentification\CreateCKRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\CKIdentification\CreateCKResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\CKIdentification\CreateCKResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\CKIdentification\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\CKIdentification\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\EndOfSupplyBatch\EndOfSupplyBatchRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\EndOfSupplyBatch\EndOfSupplyBatchResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EndOfSupplyBatch\EndOfSupplyBatchResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\EndOfSupplyBatch\EndOfSupplyBatch_1.wsdl" />
+    <None Include="Web References\EndOfSupplyBatch\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\EndOfSupplyBatch\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\EndOfSupply\EndOfSupplyRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\EndOfSupply\EndOfSupplyResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\EndOfSupply\EndOfSupplyResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\EndOfSupply\EndOfSupply_1.wsdl" />
+    <None Include="Web References\EndOfSupply\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\EndOfSupply\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileCheckOut\FileCheckOut.wsdl" />
+    <None Include="Web References\FileCheckOut\FileCheckOutRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileCheckOut\FileCheckOutResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FileCheckOut\FileCheckOutResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileCheckOut\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\FileCheckOut\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileDownload\FileDownload.wsdl" />
+    <None Include="Web References\FileDownload\FileDownloadRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileDownload\FileDownloadResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FileDownload\FileDownloadResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileDownload\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\FileDownload\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileList\FileList.wsdl" />
+    <None Include="Web References\FileList\FileListQuery_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileList\FileListResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FileList\FileListResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileList\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\FileList\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileProcessing\FileProcessing.wsdl" />
+    <None Include="Web References\FileProcessing\FileProcessingRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileProcessing\FileProcessingResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FileProcessing\FileProcessingResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileProcessing\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\FileProcessing\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileRecall\FileRecall.wsdl" />
+    <None Include="Web References\FileRecall\FileRecallRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileRecall\FileRecallResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FileRecall\FileRecallResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileRecall\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\FileRecall\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileUpload\FileUpload.wsdl" />
+    <None Include="Web References\FileUpload\FileUploadAcknowledgementEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\FileUpload\FileUploadAcknowledgement_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileUpload\FileUploadNotification_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\FileUpload\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\FileUpload\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\GetMeteringPointMP\GetMeteringPointMP_2.wsdl" />
+    <None Include="Web References\GetMeteringPointMP\GetMeteringPointRequest_1p2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\GetMeteringPointMP\GetMeteringPointResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GetMeteringPointMP\GetMeteringPointResponse_2p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\GetMeteringPointMP\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\GetMeteringPointMP\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\GetMPInformation\GetMPInformationRequest_1p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\GetMPInformation\GetMPInformationResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GetMPInformation\GetMPInformationResponse_2p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\GetMPInformation\GetMPInformation_2.wsdl" />
+    <None Include="Web References\GetMPInformation\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\GetMPInformation\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\GetSCMPInformation\GetSCMPInformationRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\GetSCMPInformation\GetSCMPInformationResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\GetSCMPInformation\GetSCMPInformationResponse_2p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\GetSCMPInformation\GetSCMPInformation_2.wsdl" />
+    <None Include="Web References\GetSCMPInformation\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\GetSCMPInformation\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\LossGainRejectUpdate\GainResultRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\LossGainRejectUpdate\GainResultResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\LossGainRejectUpdate\GainResultResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\LossGainRejectUpdate\LossGainRejectUpdate_1.wsdl" />
+    <None Include="Web References\LossGainRejectUpdate\LossResultRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\LossGainRejectUpdate\LossResultResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\LossGainRejectUpdate\LossResultResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\LossGainRejectUpdate\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\LossGainRejectUpdate\RejectionResultRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\LossGainRejectUpdate\RejectionResultResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\LossGainRejectUpdate\RejectionResultResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\LossGainRejectUpdate\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\LossGainRejectUpdate\UpdateResultRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\LossGainRejectUpdate\UpdateResultResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\LossGainRejectUpdate\UpdateResultResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MasterDataBatch\MasterDataBatchRejectionRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MasterDataBatch\MasterDataBatchRejectionResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MasterDataBatch\MasterDataBatchRejectionResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MasterDataBatch\MasterDataBatchRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MasterDataBatch\MasterDataBatchResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MasterDataBatch\MasterDataBatchResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MasterDataBatch\MasterDataBatch_1.wsdl" />
+    <None Include="Web References\MasterDataBatch\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MasterDataBatch\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MasterdataGain\MasterDataGainRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MasterdataGain\MasterDataGainResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MasterdataGain\MasterDataGainResponse_1p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MasterdataGain\MasterDataGain_1.wsdl" />
+    <None Include="Web References\MasterdataGain\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MasterdataGain\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MasterDataUpdate\MasterDataUpdateRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MasterDataUpdate\MasterDataUpdateResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MasterDataUpdate\MasterDataUpdateResponse_2p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MasterDataUpdate\MasterDataUpdate_2.wsdl" />
+    <None Include="Web References\MasterDataUpdate\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MasterDataUpdate\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MasterData\MasterDataRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MasterData\MasterDataResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MasterData\MasterDataResponse_2p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MasterData\MasterData_2.wsdl" />
+    <None Include="Web References\MasterData\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MasterData\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeasureCorrection\MeasureCorrectionAcknowledgementEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeasureCorrection\MeasureCorrectionAcknowledgement_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeasureCorrection\MeasureCorrectionNotification_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeasureCorrection\MeasureCorrectionRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeasureCorrection\MeasureCorrectionResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeasureCorrection\MeasureCorrectionResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeasureCorrection\MeasureCorrectionResultAcknowledgementEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeasureCorrection\MeasureCorrectionResultAcknowledgement_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeasureCorrection\MeasureCorrectionResultNotification_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeasureCorrection\MeasureCorrectionResultRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeasureCorrection\MeasureCorrectionResultResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeasureCorrection\MeasureCorrectionResultResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeasureCorrection\MeasureCorrection_1.wsdl" />
+    <None Include="Web References\MeasureCorrection\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MeasureCorrection\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeteringPointInformation\GetMeteringPointRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeteringPointInformation\GetMeteringPointResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeteringPointInformation\GetMeteringPointResponse_1p2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeteringPointInformation\MeteringPointInformation_1.wsdl" />
+    <None Include="Web References\MeteringPointInformation\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MeteringPointInformation\SearchMeteringPointsRequest_1p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeteringPointInformation\SearchMeteringPointsResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeteringPointInformation\SearchMeteringPointsResponse_1p3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeteringPointInformation\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReadingDispute\MeterReadingDisputeAcknowledgementEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeterReadingDispute\MeterReadingDisputeAcknowledgement_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReadingDispute\MeterReadingDisputeNotification_1p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReadingDispute\MeterReadingDisputeRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReadingDispute\MeterReadingDisputeResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeterReadingDispute\MeterReadingDisputeResponse_1p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReadingDispute\MeterReadingDisputeResultAcknowledgementEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeterReadingDispute\MeterReadingDisputeResultAcknowledgement_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReadingDispute\MeterReadingDisputeResultNotification_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReadingDispute\MeterReadingDisputeResultRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReadingDispute\MeterReadingDisputeResultResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeterReadingDispute\MeterReadingDisputeResultResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReadingDispute\MeterReadingDispute_1.wsdl" />
+    <None Include="Web References\MeterReadingDispute\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MeterReadingDispute\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReading\MeterReadingExchangeAcknowledgementEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeterReading\MeterReadingExchangeAcknowledgement_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReading\MeterReadingExchangeNotification_1p2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReading\MeterReadingExchangeRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReading\MeterReadingExchangeResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeterReading\MeterReadingExchangeResponse_1p2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReading\MeterReadingRejectionAcknowledgementEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeterReading\MeterReadingRejectionAcknowledgement_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReading\MeterReadingRejectionNotification_1p2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReading\MeterReadingRejectionRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReading\MeterReadingRejectionResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeterReading\MeterReadingRejectionResponse_1p2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReading\MeterReading_1.wsdl" />
+    <None Include="Web References\MeterReading\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MeterReading\RejectionMeterReadingRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReading\RejectionMeterReadingResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MeterReading\RejectionMeterReadingResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MeterReading\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MoveInBatch\MoveInBatchRequest_1p2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MoveInBatch\MoveInBatchResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MoveInBatch\MoveInBatchResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MoveInBatch\MoveInBatch_1.wsdl" />
+    <None Include="Web References\MoveInBatch\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MoveInBatch\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MoveIn\MoveInRequest_1p2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MoveIn\MoveInResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MoveIn\MoveInResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MoveIn\MoveIn_1.wsdl" />
+    <None Include="Web References\MoveIn\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MoveIn\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MoveOutBatch\MoveOutBatchRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MoveOutBatch\MoveOutBatchResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MoveOutBatch\MoveOutBatchResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MoveOutBatch\MoveOutBatch_1.wsdl" />
+    <None Include="Web References\MoveOutBatch\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MoveOutBatch\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MoveOut\MoveOutRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MoveOut\MoveOutResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\MoveOut\MoveOutResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\MoveOut\MoveOut_1.wsdl" />
+    <None Include="Web References\MoveOut\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\MoveOut\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\NameChangeBatch\NameChangeBatchRequest_1p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\NameChangeBatch\NameChangeBatchResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\NameChangeBatch\NameChangeBatchResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\NameChangeBatch\NameChangeBatch_1.wsdl" />
+    <None Include="Web References\NameChangeBatch\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\NameChangeBatch\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\NameChange\NameChangeRequest_1p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\NameChange\NameChangeResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\NameChange\NameChangeResponse_1p1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\NameChange\NameChange_1.wsdl" />
+    <None Include="Web References\NameChange\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\NameChange\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\NoticeEOS\NoticeEOSAcknowledgementEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\NoticeEOS\NoticeEOSAcknowledgement_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\NoticeEOS\NoticeEOSNotification_1p3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\NoticeEOS\NoticeEOSRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\NoticeEOS\NoticeEOSResponseEnvelope1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\NoticeEOS\NoticeEOSResponse_1p3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\NoticeEOS\NoticeEOS_1.wsdl" />
+    <None Include="Web References\NoticeEOS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\NoticeEOS\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4GetHistoricalSmartMeterReadingDifferential\GetHistoricalSmartMeterReadingSeriesDifferentialRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4GetHistoricalSmartMeterReadingDifferential\GetHistoricalSmartMeterReadingSeriesDifferentialResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\P4GetHistoricalSmartMeterReadingDifferential\GetHistoricalSmartMeterReadingSeriesDifferentialResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4GetHistoricalSmartMeterReadingDifferential\GetHistoricalSmartMeterReadingSeriesDifferential_1.wsdl" />
+    <None Include="Web References\P4GetHistoricalSmartMeterReadingDifferential\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\P4GetHistoricalSmartMeterReadingDifferential\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4GetHistoricalSmartMeterReading\GetHistoricalSmartMeterReadingSeriesRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4GetHistoricalSmartMeterReading\GetHistoricalSmartMeterReadingSeriesResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\P4GetHistoricalSmartMeterReading\GetHistoricalSmartMeterReadingSeriesResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4GetHistoricalSmartMeterReading\GetHistoricalSmartMeterReadingSeries_1.wsdl" />
+    <None Include="Web References\P4GetHistoricalSmartMeterReading\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\P4GetHistoricalSmartMeterReading\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4Subscription\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\P4Subscription\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4Subscription\StartStopSubscriptionResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\P4Subscription\StartStopSubscriptionResponse_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4Subscription\StartSubscriptionRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4Subscription\StopSubscriptionRequest_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4Subscription\Subscriptions_1.wsdl" />
+    <None Include="Web References\P4\P4CollectedDataBatchResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\P4\P4CollectedDataBatchResultResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\P4\P4Port.wsdl" />
+    <None Include="Web References\P4\P4Port.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4\P4Port0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4\P4Port1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4\P4Port2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\P4\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SearchMeteringPointsMP\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SearchMeteringPointsMP\SearchMeteringPointsMP_1.wsdl" />
+    <None Include="Web References\SearchMeteringPointsMP\SearchMeteringPointsRequest_1p2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SearchMeteringPointsMP\SearchMeteringPointsResponseEnvelope.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SearchMeteringPointsMP\SearchMeteringPointsResponse_1p7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web References\SearchMeteringPointsMP\SOAPFault_1p0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

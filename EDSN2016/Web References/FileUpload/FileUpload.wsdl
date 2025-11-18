@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:bm11="urn:nl:edsn:service:fileuploadnotification:env:1" xmlns:tns="urn:nl:edsn:service:fileupload:trans:1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sft="urn:edsn:edsn:data:soapfault:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bm12="urn:nl:edsn:service:fileuploadacknowledgement:env:1" name="FileUpload" targetNamespace="urn:nl:edsn:service:fileupload:trans:1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>version 1.1 dated 19/10/2012</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="urn:nl:edsn:service:fileupload:trans:1">
+      <xs:import schemaLocation="FileUploadNotification_1p0.xsd" namespace="urn:nl:edsn:service:fileuploadnotification:env:1" />
+      <xs:import schemaLocation="FileUploadAcknowledgement_1p0.xsd" namespace="urn:nl:edsn:service:fileuploadacknowledgement:env:1" />
+      <xs:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="RequestMsg">
+    <wsdl:part name="FileUploadNotificationEnvelope" element="bm11:FileUploadNotificationEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="PositiveResponseMsg">
+    <wsdl:part name="FileUploadAcknowledgementEnvelope" element="bm12:FileUploadAcknowledgementEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="SOAPFault">
+    <wsdl:part name="fault" element="sft:SOAPFault" />
+  </wsdl:message>
+  <wsdl:portType name="FileUpload">
+    <wsdl:operation name="FileUploadNotification">
+      <wsdl:input message="tns:RequestMsg" />
+      <wsdl:output message="tns:PositiveResponseMsg" />
+      <wsdl:fault name="fault" message="tns:SOAPFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FileUploadBinding" type="tns:FileUpload">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FileUploadNotification">
+      <soap:operation soapAction="FileUploadNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="FileUploadNotificationEnvelope" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="FileUploadAcknowledgementEnvelope" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FileUploadService">
+    <wsdl:port name="FileUploadPort" binding="tns:FileUploadBinding">
+      <soap:address location="http://localhost:7001/b2b/bulk/upload/FileUpload" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

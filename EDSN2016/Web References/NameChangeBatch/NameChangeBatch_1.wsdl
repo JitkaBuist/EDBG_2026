@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:namechangebatch:1:standard" xmlns:ccma2="urn:nedu:edsn:data:namechangebatchresponse:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:namechangebatchrequest:1:standard" xmlns:ccma3="urn:edsn:edsn:data:soapfault:1:standard" targetNamespace="urn:nedu:edsn:service:namechangebatch:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="NameChangeBatchRequest_1p1.xsd" namespace="urn:nedu:edsn:data:namechangebatchrequest:1:standard" />
+      <xsd:import schemaLocation="NameChangeBatchResponse_1p0.xsd" namespace="urn:nedu:edsn:data:namechangebatchresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="NameChangeBatchRequestEnvelope">
+    <part name="part1" element="ccma1:NameChangeBatchRequestEnvelope" />
+  </message>
+  <message name="NameChangeBatchResponseEnvelope">
+    <part name="part1" element="ccma2:NameChangeBatchResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma3:SOAPFault" />
+  </message>
+  <portType name="NameChangeBatchPortType">
+    <operation name="NameChangeBatch">
+      <input message="ws:NameChangeBatchRequestEnvelope" />
+      <output message="ws:NameChangeBatchResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="NameChangeBatchBinding" type="ws:NameChangeBatchPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="NameChangeBatch">
+      <soap:operation soapAction="urn:NameChangeBatch" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="NameChangeBatch">
+    <port name="NameChangeBatchPort" binding="ws:NameChangeBatchBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderNameChangeBatchRespondingActivity" />
+    </port>
+  </service>
+</definitions>

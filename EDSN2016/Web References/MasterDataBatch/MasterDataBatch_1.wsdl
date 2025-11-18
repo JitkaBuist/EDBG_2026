@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:ccma5="urn:edsn:edsn:data:soapfault:1:standard" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:masterdatabatch:1:standard" xmlns:ccma4="urn:nedu:edsn:data:masterdatabatchrejectionresponse:1:standard" xmlns:ccma2="urn:nedu:edsn:data:masterdatabatchresponse:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:masterdatabatchrequest:1:standard" xmlns:ccma3="urn:nedu:edsn:data:masterdatabatchrejectionrequest:1:standard" targetNamespace="urn:nedu:edsn:service:masterdatabatch:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="MasterDataBatchRequest_1p0.xsd" namespace="urn:nedu:edsn:data:masterdatabatchrequest:1:standard" />
+      <xsd:import schemaLocation="MasterDataBatchResponse_1p0.xsd" namespace="urn:nedu:edsn:data:masterdatabatchresponse:1:standard" />
+      <xsd:import schemaLocation="MasterDataBatchRejectionRequest_1p0.xsd" namespace="urn:nedu:edsn:data:masterdatabatchrejectionrequest:1:standard" />
+      <xsd:import schemaLocation="MasterDataBatchRejectionResponse_1p0.xsd" namespace="urn:nedu:edsn:data:masterdatabatchrejectionresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="MasterDataBatchRequestEnvelope">
+    <part name="part1" element="ccma1:MasterDataBatchRequestEnvelope" />
+  </message>
+  <message name="MasterDataBatchResponseEnvelope">
+    <part name="part1" element="ccma2:MasterDataBatchResponseEnvelope" />
+  </message>
+  <message name="MasterDataBatchRejectionRequestEnvelope">
+    <part name="part1" element="ccma3:MasterDataBatchRejectionRequestEnvelope" />
+  </message>
+  <message name="MasterDataBatchRejectionResponseEnvelope">
+    <part name="part1" element="ccma4:MasterDataBatchRejectionResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma5:SOAPFault" />
+  </message>
+  <portType name="MasterDataBatchPortType">
+    <operation name="MasterDataBatch">
+      <input message="ws:MasterDataBatchRequestEnvelope" />
+      <output message="ws:MasterDataBatchResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="MasterDataBatchRejection">
+      <input message="ws:MasterDataBatchRejectionRequestEnvelope" />
+      <output message="ws:MasterDataBatchRejectionResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="MasterDataBatchBinding" type="ws:MasterDataBatchPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="MasterDataBatch">
+      <soap:operation soapAction="urn:MasterDataBatchRequestEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="MasterDataBatchRejection">
+      <soap:operation soapAction="urn:MasterDataBatchRejectionRequestEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="MasterDataBatch">
+    <port name="MasterDataBatchPort" binding="ws:MasterDataBatchBinding">
+      <soap:address location="http://" />
+    </port>
+  </service>
+</definitions>

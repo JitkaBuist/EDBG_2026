@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:ccma="urn:nedu:edsn:data:meterreadingdisputeacknowledgement:1:standard" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:nedu:edsn:data:meterreadingdisputeacknowledgement:1:standard" version="1p0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="MeterReadingDisputeAcknowledgementEnvelope" type="ccma:MeterReadingDisputeAcknowledgementEnvelope">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#MeterReadingDisputeAcknowledgementEnvelope</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">MeterReadingDisputeAcknowledgementEnvelope</ccts:DictionaryEntryName>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="MeterReadingDisputeAcknowledgementEnvelope">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#MeterReadingDisputeAcknowledgementEnvelope</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">MeterReadingDisputeAcknowledgementEnvelope</ccts:DictionaryEntryName>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="EDSNBusinessDocumentHeader" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_EDSNBusinessDocumentHeader">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSNBusinessDocumentHeader</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSNBusinessDocumentHeader</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Content" name="Portaal_Content" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Portaal_Content">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Portaal_Content</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Portaal_Content</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Inhoud van een Portaal-bericht. Is een container-element op het hoogste niveau en wordt in elk bericht toegepast.</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Inhoud Portaal-bericht</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingDisputeAcknowledgementEnvelope_EDSNBusinessDocumentHeader">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSNBusinessDocumentHeader</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSNBusinessDocumentHeader</ccts:DictionaryEntryName>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ContentHash" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSNBusinessDocumentHeader.ContentHash</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSNBusinessDocumentHeader.ContentHash</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Hash calculation based on business document</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Hash-code berekening</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ConversationID" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSNBusinessDocumentHeader.ConversationID</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSNBusinessDocumentHeader.ConversationID</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">This identifier is used to identify all document instances related to a specific business process resulting from an initial service request</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Conversatie ID</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="CorrelationID" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSNBusinessDocumentHeader.CorrelationID</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSNBusinessDocumentHeader.CorrelationID</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">This identifier is used to identify the document instances related to a specific asynchronous process</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Correlatie ID</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CreationTimestamp" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_DateTime">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSNBusinessDocumentHeader.CreationTimestamp</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSNBusinessDocumentHeader.CreationTimestamp</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Timestamp when document was created</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Creatie datum/tijd</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="DocumentID" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSNBusinessDocumentHeader.DocumentID</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSNBusinessDocumentHeader.DocumentID</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">This identifier is used to uniquely identify the business document on a functional level</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Document ID</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ExpiresAt" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_DateTime">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSNBusinessDocumentHeader.ExpiresAt</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSNBusinessDocumentHeader.ExpiresAt</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Timestamp indication the expiration of this request</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Uiterste geldigheidsdatum</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MessageID" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSNBusinessDocumentHeader.MessageID</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSNBusinessDocumentHeader.MessageID</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">UUID voor het uniek identificeren van elke business document instantie. De UUID wordt uitgegeven door de infrastructuur.
+Deze identifier is verplicht.</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Bericht ID</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ProcessTypeID" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSNBusinessDocumentHeader.ProcessTypeID</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSNBusinessDocumentHeader.ProcessTypeID</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">This identifier is used to identify the process type where a document instance belongs to</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Procestype ID</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="RepeatedRequest" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSNBusinessDocumentHeader.RepeatedRequest</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSNBusinessDocumentHeader.RepeatedRequest</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Correlates message or service with all other messages and service calls related to the same business process</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Herhaling aanvraag</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="TestRequest" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Indicator">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSNBusinessDocumentHeader.TestRequest</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSNBusinessDocumentHeader.TestRequest</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Indicates if this is a test request</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Testdocument</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Destination" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Destination">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Destination</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Destination</ccts:DictionaryEntryName>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Bestemming</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Manifest" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Manifest">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Manifest</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Manifest</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Aangave van bijlagen en gerelateerde documenten.</ccts:Definition>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Source" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Source">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Source</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Source</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Zender van een bericht.</ccts:Definition>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingDisputeAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Destination">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Destination</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Destination</ccts:DictionaryEntryName>
+        <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Bestemming</ccts:BusinessTermName>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="Receiver" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Destination_Receiver">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Receiver</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Receiver</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Ontvanger van een bericht.</ccts:Definition>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Service" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Destination_Service">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Service</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Service</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Service to be consumed</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Dienst</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingDisputeAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Destination_Receiver">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Receiver</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Receiver</ccts:DictionaryEntryName>
+        <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Ontvanger van een bericht.</ccts:Definition>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Authority" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Receiver.Authority</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Receiver.Authority</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Descriptor that qualifies the identifier used to identify the receiving party</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Kwalificatie marktpartij</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ContactTypeIdentifier" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Receiver.ContactTypeIdentifier</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Receiver.ContactTypeIdentifier</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Role in this business process</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Rol ontvangende marktpartij</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ReceiverID" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Receiver.ReceiverID</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Receiver.ReceiverID</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Descriptor with information to identify this party</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Identificatie marktpartij</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingDisputeAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Destination_Service">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Service</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Service</ccts:DictionaryEntryName>
+        <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Service to be consumed</ccts:Definition>
+        <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Dienst</ccts:BusinessTermName>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ServiceMethod" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Service.ServiceMethod</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Service.ServiceMethod</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Identifies a process within the service that processes on the business document</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Functionaliteit van de service</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ServiceName" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Service.ServiceName</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Service.ServiceName</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Sender description of service to be carried out on the business document</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Naam van de service</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingDisputeAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Manifest">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Manifest</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Manifest</ccts:DictionaryEntryName>
+        <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Aangave van bijlagen en gerelateerde documenten.</ccts:Definition>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="NumberofItems" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Numeric">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Manifest.NumberofItems</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Manifest.NumberofItems</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Number of associated items</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Aantal gerelateerde items</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="ManifestItem" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Manifest_ManifestItem">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#ManifestItem</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">ManifestItem</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Bevat informatie over het gereferenceerde item.</ccts:Definition>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingDisputeAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Manifest_ManifestItem">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#ManifestItem</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">ManifestItem</ccts:DictionaryEntryName>
+        <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Bevat informatie over het gereferenceerde item.</ccts:Definition>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Description" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#ManifestItem.Description</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">ManifestItem.Description</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Text description of the item</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Omschrijving</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#ManifestItem.LanguageCode</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">ManifestItem.LanguageCode</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">ISO 639 language code of the item</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Taal-code</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MimeTypeQualifierCode" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#ManifestItem.MimeTypeQualifierCode</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">ManifestItem.MimeTypeQualifierCode</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">MIME Media Types Code describing the content of the item</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">MIME Media Type code</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="UniformResourceIdentifier" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#ManifestItem.UniformResourceIdentifier</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">ManifestItem.UniformResourceIdentifier</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">URI of the item
+Identifier voor locatie en naam van een attachment</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">URI</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingDisputeAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Source">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Source</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Source</ccts:DictionaryEntryName>
+        <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Zender van een bericht.</ccts:Definition>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Authority" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Source.Authority</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Source.Authority</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Descriptor that qualifies the identifier used to identify the sending party</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Kwalificatie marktpartij</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ContactTypeIdentifier" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Source.ContactTypeIdentifier</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Source.ContactTypeIdentifier</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Role in this business process</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Rol zendende marktpartij</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SenderID" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Source.SenderID</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Source.SenderID</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Descriptor with information to identify this party</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Identificatie marktpartij</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Content" name="MeterReadingDisputeAcknowledgementEnvelope_Portaal_Content">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Portaal_Content</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Portaal_Content</ccts:DictionaryEntryName>
+        <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Inhoud van een Portaal-bericht. Is een container-element op het hoogste niveau en wordt in elk bericht toegepast.</ccts:Definition>
+        <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Inhoud Portaal-bericht</ccts:BusinessTermName>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element minOccurs="0" maxOccurs="1" name="EDSN_SimpleRejection" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Portaal_Content_EDSN_SimpleRejection">
+          <xsd:annotation>
+            <xsd:documentation>
+              <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSN_SimpleRejection</ccts:UniqueID>
+              <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+              <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSN_SimpleRejection</ccts:DictionaryEntryName>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingDisputeAcknowledgementEnvelope_Portaal_Content_EDSN_SimpleRejection">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSN_SimpleRejection</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSN_SimpleRejection</ccts:DictionaryEntryName>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="SimpleRejection" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_SimpleRejectionType">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#EDSN_SimpleRejection.SimpleRejection</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">EDSN_SimpleRejection.SimpleRejection</ccts:DictionaryEntryName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="MeterReadingDisputeAcknowledgementEnvelope_Code">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Code</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Code</ccts:DictionaryEntryName>
+        <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Code (string).</ccts:Definition>
+        <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Code</ccts:BusinessTermName>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingDisputeAcknowledgementEnvelope_DateTime">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#DateTime</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">DateTime</ccts:DictionaryEntryName>
+        <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Datum/tijd (dateTime).</ccts:Definition>
+        <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Datum/tijd</ccts:BusinessTermName>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:dateTime" />
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingDisputeAcknowledgementEnvelope_Identifier">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Identifier</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Identifier</ccts:DictionaryEntryName>
+        <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Identifier (string).</ccts:Definition>
+        <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Identifier</ccts:BusinessTermName>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingDisputeAcknowledgementEnvelope_Indicator">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Indicator</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Indicator</ccts:DictionaryEntryName>
+        <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Indicator (string).</ccts:Definition>
+        <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Indicator</ccts:BusinessTermName>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingDisputeAcknowledgementEnvelope_Numeric">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Numeric</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Numeric</ccts:DictionaryEntryName>
+        <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Nummer (getal).</ccts:Definition>
+        <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Nummer</ccts:BusinessTermName>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal" />
+  </xsd:simpleType>
+  <xsd:complexType name="MeterReadingDisputeAcknowledgementEnvelope_SimpleRejectionType">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#SimpleRejectionType</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">SimpleRejectionType</ccts:DictionaryEntryName>
+        <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Vereenvoudigd datatype voor afwijzingen.</ccts:Definition>
+        <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Type afwijzingen</ccts:BusinessTermName>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="RejectionCode" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Code">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#SimpleRejectionType.RejectionCode</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">SimpleRejectionType.RejectionCode</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Afwijsreden code</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">AfwijsCode</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RejectionText" type="ccma:MeterReadingDisputeAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>
+            <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#SimpleRejectionType.RejectionText</ccts:UniqueID>
+            <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+            <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">SimpleRejectionType.RejectionText</ccts:DictionaryEntryName>
+            <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">AfwijsTekst</ccts:Definition>
+            <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Afwijstekst</ccts:BusinessTermName>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="MeterReadingDisputeAcknowledgementEnvelope_Text">
+    <xsd:annotation>
+      <xsd:documentation>
+        <ccts:UniqueID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">urn:nedu:edsn:data:meterreadingdisputeacknowledgement#Text</ccts:UniqueID>
+        <ccts:VersionID xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">1.0</ccts:VersionID>
+        <ccts:DictionaryEntryName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Text</ccts:DictionaryEntryName>
+        <ccts:Definition xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Tekst (string).</ccts:Definition>
+        <ccts:BusinessTermName xmlns:ccts="urn:un:unece:uncefact:documentation:common:3:standard:CoreComponentsTechnicalSpecification:3">Tekst</ccts:BusinessTermName>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:endofsupplybatch:1:standard" xmlns:ccma2="urn:nedu:edsn:data:endofsupplybatchresponse:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:endofsupplybatchrequest:1:standard" xmlns:ccma3="urn:edsn:edsn:data:soapfault:1:standard" targetNamespace="urn:nedu:edsn:service:endofsupplybatch:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="EndOfSupplyBatchRequest_1p0.xsd" namespace="urn:nedu:edsn:data:endofsupplybatchrequest:1:standard" />
+      <xsd:import schemaLocation="EndOfSupplyBatchResponse_1p0.xsd" namespace="urn:nedu:edsn:data:endofsupplybatchresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="EndOfSupplyBatchRequestEnvelope">
+    <part name="part1" element="ccma1:EndOfSupplyBatchRequestEnvelope" />
+  </message>
+  <message name="EndOfSupplyBatchResponseEnvelope">
+    <part name="part1" element="ccma2:EndOfSupplyBatchResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma3:SOAPFault" />
+  </message>
+  <portType name="EndOfSupplyBatchPortType">
+    <operation name="EndOfSupplyBatch">
+      <input message="ws:EndOfSupplyBatchRequestEnvelope" />
+      <output message="ws:EndOfSupplyBatchResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="EndOfSupplyBatchBinding" type="ws:EndOfSupplyBatchPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="EndOfSupplyBatch">
+      <soap:operation soapAction="urn:EndOfSupplyBatchRequestEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="EndOfSupplyBatch">
+    <port name="EndOfSupplyBatchPort" binding="ws:EndOfSupplyBatchBinding">
+      <soap:address location="http://" />
+    </port>
+  </service>
+</definitions>

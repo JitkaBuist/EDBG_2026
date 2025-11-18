@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/MeterReadingDispute_1p1/MeterReadingDisputeResultRequest_1p0.xsd" filename="MeterReadingDisputeResultRequest_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/MeterReadingDispute_1p1/MeterReadingDisputeNotification_1p1.xsd" filename="MeterReadingDisputeNotification_1p1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/MeterReadingDispute_1p1/MeterReadingDisputeResultResponse_1p0.xsd" filename="MeterReadingDisputeResultResponse_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/MeterReadingDispute_1p1/MeterReadingDisputeResponse_1p1.xsd" filename="MeterReadingDisputeResponse_1p1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/MeterReadingDispute_1p1/MeterReadingDisputeAcknowledgement_1p0.xsd" filename="MeterReadingDisputeAcknowledgement_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/MeterReadingDispute_1p1/MeterReadingDisputeRequest_1p0.xsd" filename="MeterReadingDisputeRequest_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/MeterReadingDispute_1p1/MeterReadingDisputeResultAcknowledgement_1p0.xsd" filename="MeterReadingDisputeResultAcknowledgement_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/MeterReadingDispute_1p1/MeterReadingDispute_1.wsdl" filename="MeterReadingDispute_1.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/MeterReadingDispute_1p1/MeterReadingDisputeResultNotification_1p0.xsd" filename="MeterReadingDisputeResultNotification_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/MeterReadingDispute_1p1/SOAPFault_1p0.xsd" filename="SOAPFault_1p0.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

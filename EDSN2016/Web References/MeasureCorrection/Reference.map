@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/MeasureCorrection_1p0/MeasureCorrectionAcknowledgement_1p0.xsd" filename="MeasureCorrectionAcknowledgement_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/MeasureCorrection_1p0/MeasureCorrectionResultResponse_1p0.xsd" filename="MeasureCorrectionResultResponse_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/MeasureCorrection_1p0/MeasureCorrection_1.wsdl" filename="MeasureCorrection_1.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/MeasureCorrection_1p0/MeasureCorrectionRequest_1p0.xsd" filename="MeasureCorrectionRequest_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/MeasureCorrection_1p0/MeasureCorrectionResponse_1p0.xsd" filename="MeasureCorrectionResponse_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/MeasureCorrection_1p0/SOAPFault_1p0.xsd" filename="SOAPFault_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/MeasureCorrection_1p0/MeasureCorrectionResultAcknowledgement_1p0.xsd" filename="MeasureCorrectionResultAcknowledgement_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/MeasureCorrection_1p0/MeasureCorrectionResultNotification_1p0.xsd" filename="MeasureCorrectionResultNotification_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/MeasureCorrection_1p0/MeasureCorrectionResultRequest_1p0.xsd" filename="MeasureCorrectionResultRequest_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/MeasureCorrection_1p0/MeasureCorrectionNotification_1p0.xsd" filename="MeasureCorrectionNotification_1p0.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://p4-test.edsn.nl/P4BatchVerzoekMeterstand/P4Port?xsd=4" filename="P4Port.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="https://p4-test.edsn.nl/P4BatchVerzoekMeterstand/P4Port?wsdl" filename="P4Port.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://p4-test.edsn.nl/P4BatchVerzoekMeterstand/P4Port?xsd=3" filename="P4Port0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://p4-test.edsn.nl/P4BatchVerzoekMeterstand/P4Port?xsd=2" filename="P4Port1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="https://p4-test.edsn.nl/P4BatchVerzoekMeterstand/P4Port?xsd=1" filename="P4Port2.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

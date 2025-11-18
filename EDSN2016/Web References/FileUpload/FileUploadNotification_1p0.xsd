@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ccma="urn:nl:edsn:service:fileuploadnotification:env:1" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:nl:edsn:service:fileuploadnotification:env:1" version="1p0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="FileUploadNotificationEnvelope" type="ccma:FileUploadNotificationEnvelope" />
+  <xsd:complexType name="FileUploadNotificationEnvelope">
+    <xsd:sequence>
+      <xsd:element name="EDSNBusinessDocumentHeader" type="ccma:FileUploadNotificationEnvelope_EDSNBusinessDocumentHeader" />
+      <xsd:element name="FileUploadNotificationContent" type="ccma:FileUploadNotificationEnvelope_FileUploadNotificationContent" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileUploadNotificationEnvelope_EDSNBusinessDocumentHeader">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ContentHash" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Hash calculation based on business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ConversationID" type="ccma:FileUploadNotificationEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify all document instances related to a specific business process resulting from an initial service request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="CorrelationID" type="ccma:FileUploadNotificationEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify the document instances related to a specific asynchronous process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CreationTimestamp" type="ccma:FileUploadNotificationEnvelope_DateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when document was created</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Destination" type="ccma:FileUploadNotificationEnvelope_EDSNBusinessDocumentHeader_Destination" />
+      <xsd:element minOccurs="0" name="DocumentID" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to uniquely identify the business document on a functional level</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ExpiresAt" type="ccma:FileUploadNotificationEnvelope_DateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp indication the expiration of this request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="Manifest" type="ccma:FileUploadNotificationEnvelope_EDSNBusinessDocumentHeader_Manifest">
+        <xsd:annotation>
+          <xsd:documentation>Aangave van bijlagen en gerelateerde documenten.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MessageID" type="ccma:FileUploadNotificationEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>UUID voor het uniek identificeren van elke business document instantie. De UUID wordt uitgegeven door de infrastructuur.
+Deze identifier is verplicht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ProcessTypeID" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify the process type where a document instance belongs to</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="RepeatedRequest" type="ccma:FileUploadNotificationEnvelope_Indicator">
+        <xsd:annotation>
+          <xsd:documentation>Correlates message or service with all other messages and service calls related to the same business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Source" type="ccma:FileUploadNotificationEnvelope_EDSNBusinessDocumentHeader_Source">
+        <xsd:annotation>
+          <xsd:documentation>Zender van een bericht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="TestRequest" type="ccma:FileUploadNotificationEnvelope_Indicator">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if this is a test request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileUploadNotificationEnvelope_EDSNBusinessDocumentHeader_Destination">
+    <xsd:sequence>
+      <xsd:element name="Receiver" type="ccma:FileUploadNotificationEnvelope_EDSNBusinessDocumentHeader_Destination_Receiver">
+        <xsd:annotation>
+          <xsd:documentation>Ontvanger van een bericht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="Service" type="ccma:FileUploadNotificationEnvelope_EDSNBusinessDocumentHeader_Destination_Service">
+        <xsd:annotation>
+          <xsd:documentation>Service to be consumed</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileUploadNotificationEnvelope_EDSNBusinessDocumentHeader_Destination_Receiver">
+    <xsd:annotation>
+      <xsd:documentation>Ontvanger van een bericht.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Authority" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor that qualifies the identifier used to identify the receiving party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ContactTypeIdentifier" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Role in this business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ReceiverID" type="ccma:FileUploadNotificationEnvelope_GLNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor with information to identify this party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileUploadNotificationEnvelope_EDSNBusinessDocumentHeader_Destination_Service">
+    <xsd:annotation>
+      <xsd:documentation>Service to be consumed</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ServiceMethod" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Identifies a process within the service that processes on the business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ServiceName" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Sender description of service to be carried out on the business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileUploadNotificationEnvelope_EDSNBusinessDocumentHeader_Manifest">
+    <xsd:annotation>
+      <xsd:documentation>Aangave van bijlagen en gerelateerde documenten.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="ManifestItem" type="ccma:FileUploadNotificationEnvelope_EDSNBusinessDocumentHeader_Manifest_ManifestItem">
+        <xsd:annotation>
+          <xsd:documentation>Bevat informatie over het gereferenceerde item.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="NumberofItems" type="ccma:FileUploadNotificationEnvelope_Numeric">
+        <xsd:annotation>
+          <xsd:documentation>Number of associated items</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileUploadNotificationEnvelope_EDSNBusinessDocumentHeader_Manifest_ManifestItem">
+    <xsd:annotation>
+      <xsd:documentation>Bevat informatie over het gereferenceerde item.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Description" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Text description of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="LanguageCode" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>ISO 639 language code of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MimeTypeQualifierCode" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>MIME Media Types Code describing the content of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="UniformResourceIdentifier" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>URI of the item
+Identifier voor locatie en naam van een attachment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileUploadNotificationEnvelope_EDSNBusinessDocumentHeader_Source">
+    <xsd:annotation>
+      <xsd:documentation>Zender van een bericht.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Authority" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor that qualifies the identifier used to identify the sending party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ContactTypeIdentifier" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Role in this business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SenderID" type="ccma:FileUploadNotificationEnvelope_GLNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor with information to identify this party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileUploadNotificationEnvelope_FileUploadNotificationContent">
+    <xsd:sequence>
+      <xsd:element name="FileUpload_EDSNFileDetails" type="ccma:FileUploadNotificationEnvelope_FileUploadNotificationContent_FileUpload_EDSNFileDetails">
+        <xsd:annotation>
+          <xsd:documentation>Bestandsgegevens.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileUploadNotificationEnvelope_FileUploadNotificationContent_FileUpload_EDSNFileDetails">
+    <xsd:annotation>
+      <xsd:documentation>Bestandsgegevens.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="FileType" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Bestandstype voor bestandsuitwisseling.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Group" type="ccma:FileUploadNotificationEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Groep voor bestandsuitwisseling.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ReceivingEntityID_EDSNFileDetails" type="ccma:FileUploadNotificationEnvelope_FileUploadNotificationContent_FileUpload_EDSNFileDetails_ReceivingEntityID_EDSNFileDetails">
+        <xsd:annotation>
+          <xsd:documentation>EAN ontvangende partij.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SendingEntityID_EDSNFileDetails" type="ccma:FileUploadNotificationEnvelope_FileUploadNotificationContent_FileUpload_EDSNFileDetails_SendingEntityID_EDSNFileDetails">
+        <xsd:annotation>
+          <xsd:documentation>EAN zendende partij.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileUploadNotificationEnvelope_FileUploadNotificationContent_FileUpload_EDSNFileDetails_ReceivingEntityID_EDSNFileDetails">
+    <xsd:annotation>
+      <xsd:documentation>EAN ontvangende partij.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="OrganisationID" type="ccma:FileUploadNotificationEnvelope_GLNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>EAN code organisatie.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PartyID" type="ccma:FileUploadNotificationEnvelope_GLNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>EAN code marktpartij.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileUploadNotificationEnvelope_FileUploadNotificationContent_FileUpload_EDSNFileDetails_SendingEntityID_EDSNFileDetails">
+    <xsd:annotation>
+      <xsd:documentation>EAN zendende partij.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="OrganisationID" type="ccma:FileUploadNotificationEnvelope_GLNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>EAN code organisatie.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PartyID" type="ccma:FileUploadNotificationEnvelope_GLNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>EAN code marktpartij.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="FileUploadNotificationEnvelope_DateTime">
+    <xsd:annotation>
+      <xsd:documentation>Datum/tijd (dateTime).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:dateTime" />
+  </xsd:simpleType>
+  <xsd:simpleType name="FileUploadNotificationEnvelope_GLNEANCode">
+    <xsd:annotation>
+      <xsd:documentation>Global Location Number (GLN) conform de Europese Artikel Nummering.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="13" />
+      <xsd:pattern value="[0-9]{13}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="FileUploadNotificationEnvelope_Identifier">
+    <xsd:annotation>
+      <xsd:documentation>Identifier (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="FileUploadNotificationEnvelope_Indicator">
+    <xsd:annotation>
+      <xsd:documentation>Indicator (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:boolean" />
+  </xsd:simpleType>
+  <xsd:simpleType name="FileUploadNotificationEnvelope_Numeric">
+    <xsd:annotation>
+      <xsd:documentation>Nummer (getal).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal" />
+  </xsd:simpleType>
+  <xsd:simpleType name="FileUploadNotificationEnvelope_Text">
+    <xsd:annotation>
+      <xsd:documentation>Tekst (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+</xsd:schema>

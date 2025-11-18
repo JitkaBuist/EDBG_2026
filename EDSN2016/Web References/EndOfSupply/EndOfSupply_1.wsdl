@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:endofsupply:1:standard" xmlns:ccma2="urn:nedu:edsn:data:endofsupplyresponse:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:endofsupplyrequest:1:standard" xmlns:ccma3="urn:edsn:edsn:data:soapfault:1:standard" targetNamespace="urn:nedu:edsn:service:endofsupply:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="EndOfSupplyRequest_1p0.xsd" namespace="urn:nedu:edsn:data:endofsupplyrequest:1:standard" />
+      <xsd:import schemaLocation="EndOfSupplyResponse_1p0.xsd" namespace="urn:nedu:edsn:data:endofsupplyresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="EndOfSupplyRequestEnvelope">
+    <part name="part1" element="ccma1:EndOfSupplyRequestEnvelope" />
+  </message>
+  <message name="EndOfSupplyResponseEnvelope">
+    <part name="part1" element="ccma2:EndOfSupplyResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma3:SOAPFault" />
+  </message>
+  <portType name="EndOfSupplyPortType">
+    <operation name="EndOfSupply">
+      <input message="ws:EndOfSupplyRequestEnvelope" />
+      <output message="ws:EndOfSupplyResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="EndOfSupplyBinding" type="ws:EndOfSupplyPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="EndOfSupply">
+      <soap:operation soapAction="urn:EndOfSupplyRequestEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="EndOfSupply">
+    <port name="EndOfSupplyPort" binding="ws:EndOfSupplyBinding">
+      <soap:address location="http://" />
+    </port>
+  </service>
+</definitions>

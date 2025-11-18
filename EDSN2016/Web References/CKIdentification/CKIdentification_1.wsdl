@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:ckidentification:1:standard" xmlns:ccma2="urn:nedu:edsn:data:createckresponse:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:createckrequest:1:standard" xmlns:ccma3="urn:edsn:edsn:data:soapfault:1:standard" targetNamespace="urn:nedu:edsn:service:ckidentification:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="CreateCKRequest_1p0.xsd" namespace="urn:nedu:edsn:data:createckrequest:1:standard" />
+      <xsd:import schemaLocation="CreateCKResponse_1p0.xsd" namespace="urn:nedu:edsn:data:createckresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="CreateCKRequestEnvelope">
+    <part name="part1" element="ccma1:CreateCKRequestEnvelope" />
+  </message>
+  <message name="CreateCKResponseEnvelope">
+    <part name="part1" element="ccma2:CreateCKResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma3:SOAPFault" />
+  </message>
+  <portType name="CKIdentificationPortType">
+    <operation name="CreateCKRequest">
+      <input message="ws:CreateCKRequestEnvelope" />
+      <output message="ws:CreateCKResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="CKIdentificationBinding" type="ws:CKIdentificationPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="CreateCKRequest">
+      <soap:operation soapAction="urn:CreateCKRequest" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="CKIdentification">
+    <port name="CKIdentificationPort" binding="ws:CKIdentificationBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderCKIdentificationRespondingActivity" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:ccma="urn:nedu:edsn:data:meterreadingrejectionacknowledgement:1:standard" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:nedu:edsn:data:meterreadingrejectionacknowledgement:1:standard" version="1p0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="MeterReadingRejectionAcknowledgementEnvelope" type="ccma:MeterReadingRejectionAcknowledgementEnvelope" />
+  <xsd:complexType name="MeterReadingRejectionAcknowledgementEnvelope">
+    <xsd:sequence>
+      <xsd:element name="EDSNBusinessDocumentHeader" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_EDSNBusinessDocumentHeader" />
+      <xsd:element sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Content" name="Portaal_Content" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Portaal_Content">
+        <xsd:annotation>
+          <xsd:documentation>Inhoud van een Portaal-bericht. Is een container-element op het hoogste niveau en wordt in elk bericht toegepast.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionAcknowledgementEnvelope_EDSNBusinessDocumentHeader">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ContentHash" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Hash calculation based on business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ConversationID" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify all document instances related to a specific business process resulting from an initial service request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="CorrelationID" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify the document instances related to a specific asynchronous process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CreationTimestamp" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_DateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when document was created</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="DocumentID" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to uniquely identify the business document on a functional level</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ExpiresAt" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_DateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp indication the expiration of this request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MessageID" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>UUID voor het uniek identificeren van elke business document instantie. De UUID wordt uitgegeven door de infrastructuur.
+Deze identifier is verplicht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ProcessTypeID" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify the process type where a document instance belongs to</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="RepeatedRequest" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>Correlates message or service with all other messages and service calls related to the same business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="TestRequest" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Indicator">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if this is a test request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Destination" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Destination" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Manifest" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Manifest">
+        <xsd:annotation>
+          <xsd:documentation>Aangave van bijlagen en gerelateerde documenten.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Source" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Source">
+        <xsd:annotation>
+          <xsd:documentation>Zender van een bericht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Destination">
+    <xsd:sequence>
+      <xsd:element name="Receiver" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Destination_Receiver">
+        <xsd:annotation>
+          <xsd:documentation>Ontvanger van een bericht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Service" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Destination_Service">
+        <xsd:annotation>
+          <xsd:documentation>Service to be consumed</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Destination_Receiver">
+    <xsd:annotation>
+      <xsd:documentation>Ontvanger van een bericht.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Authority" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor that qualifies the identifier used to identify the receiving party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ContactTypeIdentifier" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Role in this business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ReceiverID" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor with information to identify this party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Destination_Service">
+    <xsd:annotation>
+      <xsd:documentation>Service to be consumed</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ServiceMethod" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Identifies a process within the service that processes on the business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ServiceName" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Sender description of service to be carried out on the business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Manifest">
+    <xsd:annotation>
+      <xsd:documentation>Aangave van bijlagen en gerelateerde documenten.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="NumberofItems" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Numeric">
+        <xsd:annotation>
+          <xsd:documentation>Number of associated items</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="ManifestItem" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Manifest_ManifestItem">
+        <xsd:annotation>
+          <xsd:documentation>Bevat informatie over het gereferenceerde item.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Manifest_ManifestItem">
+    <xsd:annotation>
+      <xsd:documentation>Bevat informatie over het gereferenceerde item.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Description" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Text description of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>ISO 639 language code of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MimeTypeQualifierCode" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>MIME Media Types Code describing the content of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="UniformResourceIdentifier" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>URI of the item
+Identifier voor locatie en naam van een attachment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionAcknowledgementEnvelope_EDSNBusinessDocumentHeader_Source">
+    <xsd:annotation>
+      <xsd:documentation>Zender van een bericht.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Authority" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor that qualifies the identifier used to identify the sending party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ContactTypeIdentifier" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Role in this business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SenderID" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor with information to identify this party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Content" name="MeterReadingRejectionAcknowledgementEnvelope_Portaal_Content">
+    <xsd:annotation>
+      <xsd:documentation>Inhoud van een Portaal-bericht. Is een container-element op het hoogste niveau en wordt in elk bericht toegepast.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element minOccurs="0" maxOccurs="1" name="EDSN_SimpleRejection" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Portaal_Content_EDSN_SimpleRejection" />
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionAcknowledgementEnvelope_Portaal_Content_EDSN_SimpleRejection">
+    <xsd:sequence>
+      <xsd:element name="SimpleRejection" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_SimpleRejectionType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="MeterReadingRejectionAcknowledgementEnvelope_Code">
+    <xsd:annotation>
+      <xsd:documentation>Code (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingRejectionAcknowledgementEnvelope_DateTime">
+    <xsd:annotation>
+      <xsd:documentation>Datum/tijd (dateTime).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:dateTime" />
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingRejectionAcknowledgementEnvelope_Identifier">
+    <xsd:annotation>
+      <xsd:documentation>Identifier (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingRejectionAcknowledgementEnvelope_Indicator">
+    <xsd:annotation>
+      <xsd:documentation>Indicator (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingRejectionAcknowledgementEnvelope_Numeric">
+    <xsd:annotation>
+      <xsd:documentation>Nummer (getal).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal" />
+  </xsd:simpleType>
+  <xsd:complexType name="MeterReadingRejectionAcknowledgementEnvelope_SimpleRejectionType">
+    <xsd:annotation>
+      <xsd:documentation>Vereenvoudigd datatype voor afwijzingen.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="RejectionCode" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Code">
+        <xsd:annotation>
+          <xsd:documentation>Afwijsreden code</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RejectionText" type="ccma:MeterReadingRejectionAcknowledgementEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>AfwijsTekst</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="MeterReadingRejectionAcknowledgementEnvelope_Text">
+    <xsd:annotation>
+      <xsd:documentation>Tekst (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+</xsd:schema>

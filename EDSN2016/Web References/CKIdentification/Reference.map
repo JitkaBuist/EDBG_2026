@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SectorRelease 2017/Berichtdefinities/CKIdentification_1p0/CreateCKResponse_1p0.xsd" filename="CreateCKResponse_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SectorRelease 2017/Berichtdefinities/CKIdentification_1p0/SOAPFault_1p0.xsd" filename="SOAPFault_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/Users/Pieter/Documents/EDBG/SectorRelease 2017/Berichtdefinities/CKIdentification_1p0/CKIdentification_1.wsdl" filename="CKIdentification_1.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SectorRelease 2017/Berichtdefinities/CKIdentification_1p0/CreateCKRequest_1p0.xsd" filename="CreateCKRequest_1p0.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

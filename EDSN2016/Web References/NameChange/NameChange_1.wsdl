@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:namechange:1:standard" xmlns:ccma2="urn:nedu:edsn:data:namechangeresponse:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:namechangerequest:1:standard" xmlns:ccma3="urn:edsn:edsn:data:soapfault:1:standard" targetNamespace="urn:nedu:edsn:service:namechange:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="NameChangeRequest_1p1.xsd" namespace="urn:nedu:edsn:data:namechangerequest:1:standard" />
+      <xsd:import schemaLocation="NameChangeResponse_1p1.xsd" namespace="urn:nedu:edsn:data:namechangeresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="NameChangeRequestEnvelope">
+    <part name="part1" element="ccma1:NameChangeRequestEnvelope" />
+  </message>
+  <message name="NameChangeResponseEnvelope">
+    <part name="part1" element="ccma2:NameChangeResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma3:SOAPFault" />
+  </message>
+  <portType name="NameChangePortType">
+    <operation name="NameChange">
+      <input message="ws:NameChangeRequestEnvelope" />
+      <output message="ws:NameChangeResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="NameChangeBinding" type="ws:NameChangePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="NameChange">
+      <soap:operation soapAction="urn:NameChange" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="NameChange">
+    <port name="NameChangePort" binding="ws:NameChangeBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderNameChangeRespondingActivity" />
+    </port>
+  </service>
+</definitions>

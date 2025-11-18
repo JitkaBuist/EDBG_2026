@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:changeofsupplier:1:standard" xmlns:ccma2="urn:nedu:edsn:data:changeofsupplierresponse:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:changeofsupplierrequest:1:standard" xmlns:ccma3="urn:edsn:edsn:data:soapfault:1:standard" targetNamespace="urn:nedu:edsn:service:changeofsupplier:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="ChangeOfSupplierRequest_1p1.xsd" namespace="urn:nedu:edsn:data:changeofsupplierrequest:1:standard" />
+      <xsd:import schemaLocation="ChangeOfSupplierResponse_1p0.xsd" namespace="urn:nedu:edsn:data:changeofsupplierresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="ChangeOfSupplierRequestEnvelope">
+    <part name="part1" element="ccma1:ChangeOfSupplierRequestEnvelope" />
+  </message>
+  <message name="ChangeOfSupplierResponseEnvelope">
+    <part name="part1" element="ccma2:ChangeOfSupplierResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma3:SOAPFault" />
+  </message>
+  <portType name="ChangeOfSupplierPortType">
+    <operation name="ChangeOfSupplier">
+      <input message="ws:ChangeOfSupplierRequestEnvelope" />
+      <output message="ws:ChangeOfSupplierResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="ChangeOfSupplierBinding" type="ws:ChangeOfSupplierPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ChangeOfSupplier">
+      <soap:operation soapAction="urn:ChangeOfSupplier" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="ChangeOfSupplier">
+    <port name="ChangeOfSupplierPort" binding="ws:ChangeOfSupplierBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderChangeOfSupplierRespondingActivity" />
+    </port>
+  </service>
+</definitions>

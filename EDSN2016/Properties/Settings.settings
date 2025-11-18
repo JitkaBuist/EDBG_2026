@@ -1,0 +1,117 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="nl.Energie.EDSN.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EDSN2016_ChangeOfSupplier_ChangeOfSupplier" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderChangeOfSupplierRespondingActivity</Value>
+    </Setting>
+    <Setting Name="EDSN2016_ChangeOfSupplierBatch_ChangeOfSupplierBatch" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderChangeOfSupplierBatchRespondingActivity</Value>
+    </Setting>
+    <Setting Name="EDSN2016_MasterData_MasterData" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderMasterDataRespondingActivity</Value>
+    </Setting>
+    <Setting Name="EDSN2016_MasterDataUpdate_MasterDataUpdate" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderMasterDataUpdateRespondingActivity</Value>
+    </Setting>
+    <Setting Name="EDSN2016_MeteringPointInformation_MeteringPointInformation" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderMeteringPointInformationRespondingActivity</Value>
+    </Setting>
+    <Setting Name="EDSN2016_MeterReading_MeterReading" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderMeterReadingRespondingActivity</Value>
+    </Setting>
+    <Setting Name="EDSN2016_MeterReadingDispute_MeterReadingDispute" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderMeterReadingDisputeRespondingActivity</Value>
+    </Setting>
+    <Setting Name="EDSN2016_MoveInBatch_MoveInBatch" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderMoveInBatchRespondingActivity</Value>
+    </Setting>
+    <Setting Name="EDSN2016_NoticeEOS_NoticeEOS" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderNoticeEOSRespondingActivity</Value>
+    </Setting>
+    <Setting Name="EDSN2016_ChangeOfAllocationMethod_ChangeOfAllocationMethod" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderChangeOfAllocationMethodRespondingActivity</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_FileDownload_FileDownloadService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:7001/b2b/bulk/download/FileDownload</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_FileCheckOut_FileCheckOutService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:7001/b2b/bulk/generic/FileCheckOut</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_FileList_FileListService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:7001/b2b/bulk/generic/FileList</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_FileProcessing_FileProcessingService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:7001/b2b/bulk/generic/FileProcessing</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_FileRecall_FileRecallService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:7001/b2b/bulk/generic/FileRecall</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_FileUpload_FileUploadService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:7001/b2b/bulk/upload/FileUpload</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_P4_P4" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://p4-test.edsn.nl:443/P4BatchVerzoekMeterstand/P4Port</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_MoveIn_MoveIn" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderMoveInRespondingActivity</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_CKIdentification_1_CKIdentification" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderCKIdentificationRespondingActivity</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_GetMPInformation_GetMPInformation" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderGetMPInformationRespondingActivity</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_SearchMeteringPointsMP_SearchMeteringPointsMP" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderSearchMeteringPointsMPRespondingActivity</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_GetMeteringPointMP_GetMeteringPointMP" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderGetMeteringPointMPRespondingActivity</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_GetSCMPInformation_GetSCMPInformation" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderGetSCMPInformationRespondingActivity</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_MasterdataGain_MasterDataGain" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderMasterDataGainRespondingActivity</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_MeasureCorrection_MeasureCorrection" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderMeasureCorrectionRespondingActivity</Value>
+    </Setting>
+    <Setting Name="EDSN2016_EndOfSupply_EndOfSupply" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://</Value>
+    </Setting>
+    <Setting Name="EDSN2016_EndOfSupplyBatch_EndOfSupplyBatch" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://</Value>
+    </Setting>
+    <Setting Name="EDSN2016_LossGainRejectUpdate_LossGainRejectUpdate" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://</Value>
+    </Setting>
+    <Setting Name="EDSN2016_MasterDataBatch_MasterDataBatch" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://</Value>
+    </Setting>
+    <Setting Name="EDSN2016_MoveOut_MoveOut" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://</Value>
+    </Setting>
+    <Setting Name="EDSN2016_MoveOutBatch_MoveOutBatch" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://</Value>
+    </Setting>
+    <Setting Name="EDSN2016_NameChange_NameChange" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderNameChangeRespondingActivity</Value>
+    </Setting>
+    <Setting Name="EDSN2016_NameChangeBatch_NameChangeBatch" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9000/b2b/synchroon/ResponderNameChangeBatchRespondingActivity</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_ChangeOfPV_ChangeOfPV" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_P4Subscription_Subscriptions" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_P4GetHistoricalSmartMeterReading_GetHistoricalSmartMeterReadingSeries" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost</Value>
+    </Setting>
+    <Setting Name="Energie_EDSN_P4GetHistoricalSmartMeterReadingDifferential_GetHistoricalSmartMeterReadingSeriesDifferential" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

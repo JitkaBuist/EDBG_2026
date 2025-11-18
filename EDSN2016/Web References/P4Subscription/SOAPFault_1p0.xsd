@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ccma="urn:edsn:edsn:data:soapfault:1:standard" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:edsn:edsn:data:soapfault:1:standard" version="1p0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="SOAPFault" type="ccma:SOAPFault" />
+  <xsd:complexType name="SOAPFault">
+    <xsd:sequence>
+      <xsd:element name="ErrorCode" type="ccma:SOAPFault_Numeric" />
+      <xsd:element name="ErrorText" type="ccma:SOAPFault_Text" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ErrorDetails" type="ccma:SOAPFault_Text" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="SOAPFault_Numeric">
+    <xsd:annotation>
+      <xsd:documentation>Nummer (getal) (LDT categorie-3).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal" />
+  </xsd:simpleType>
+  <xsd:simpleType name="SOAPFault_Text">
+    <xsd:annotation>
+      <xsd:documentation>Tekst (string) (LDT categorie-3).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+</xsd:schema>

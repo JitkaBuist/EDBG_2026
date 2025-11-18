@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tennet.Models.GLDPM
+{
+    public class GLDPMAckRequest
+    {
+        public string responsableParty { get; set; }
+        public string _operator { get; set; }
+        public string correlationId { get; set; }
+    }
+
+}

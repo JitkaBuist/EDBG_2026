@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:moveout:1:standard" xmlns:ccma2="urn:nedu:edsn:data:moveoutresponse:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:moveoutrequest:1:standard" xmlns:ccma3="urn:edsn:edsn:data:soapfault:1:standard" targetNamespace="urn:nedu:edsn:service:moveout:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="MoveOutRequest_1p0.xsd" namespace="urn:nedu:edsn:data:moveoutrequest:1:standard" />
+      <xsd:import schemaLocation="MoveOutResponse_1p0.xsd" namespace="urn:nedu:edsn:data:moveoutresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="MoveOutRequestEnvelope">
+    <part name="part1" element="ccma1:MoveOutRequestEnvelope" />
+  </message>
+  <message name="MoveOutResponseEnvelope">
+    <part name="part1" element="ccma2:MoveOutResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma3:SOAPFault" />
+  </message>
+  <portType name="MoveOutPortType">
+    <operation name="MoveOut">
+      <input message="ws:MoveOutRequestEnvelope" />
+      <output message="ws:MoveOutResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="MoveOutBinding" type="ws:MoveOutPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="MoveOut">
+      <soap:operation soapAction="urn:MoveOutRequestEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="MoveOut">
+    <port name="MoveOutPort" binding="ws:MoveOutBinding">
+      <soap:address location="http://" />
+    </port>
+  </service>
+</definitions>

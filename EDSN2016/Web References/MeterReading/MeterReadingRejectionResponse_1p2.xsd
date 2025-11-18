@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:ccma="urn:nedu:edsn:data:meterreadingrejectionresponse:1:standard" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:nedu:edsn:data:meterreadingrejectionresponse:1:standard" version="1p2" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="MeterReadingRejectionResponseEnvelope" type="ccma:MeterReadingRejectionResponseEnvelope" />
+  <xsd:complexType name="MeterReadingRejectionResponseEnvelope">
+    <xsd:sequence>
+      <xsd:element name="EDSNBusinessDocumentHeader" type="ccma:MeterReadingRejectionResponseEnvelope_EDSNBusinessDocumentHeader" />
+      <xsd:element sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Content" name="Portaal_Content" type="ccma:MeterReadingRejectionResponseEnvelope_PC">
+        <xsd:annotation>
+          <xsd:documentation>Inhoud van een Portaal-bericht. Is een container-element op het hoogste niveau en wordt in elk bericht toegepast.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionResponseEnvelope_EDSNBusinessDocumentHeader">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ContentHash" type="ccma:MeterReadingRejectionResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Hash calculation based on business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ConversationID" type="ccma:MeterReadingRejectionResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify all document instances related to a specific business process resulting from an initial service request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="CorrelationID" type="ccma:MeterReadingRejectionResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify the document instances related to a specific asynchronous process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CreationTimestamp" type="ccma:MeterReadingRejectionResponseEnvelope_DateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when document was created</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="DocumentID" type="ccma:MeterReadingRejectionResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to uniquely identify the business document on a functional level</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ExpiresAt" type="ccma:MeterReadingRejectionResponseEnvelope_DateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp indication the expiration of this request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MessageID" type="ccma:MeterReadingRejectionResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>UUID voor het uniek identificeren van elke business document instantie. De UUID wordt uitgegeven door de infrastructuur.
+Deze identifier is verplicht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ProcessTypeID" type="ccma:MeterReadingRejectionResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify the process type where a document instance belongs to</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="RepeatedRequest" type="ccma:MeterReadingRejectionResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>Correlates message or service with all other messages and service calls related to the same business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="TestRequest" type="ccma:MeterReadingRejectionResponseEnvelope_Indicator">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if this is a test request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Destination" type="ccma:MeterReadingRejectionResponseEnvelope_EDSNBusinessDocumentHeader_Destination" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Manifest" type="ccma:MeterReadingRejectionResponseEnvelope_EDSNBusinessDocumentHeader_Manifest">
+        <xsd:annotation>
+          <xsd:documentation>Aangave van bijlagen en gerelateerde documenten.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Source" type="ccma:MeterReadingRejectionResponseEnvelope_EDSNBusinessDocumentHeader_Source">
+        <xsd:annotation>
+          <xsd:documentation>Zender van een bericht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionResponseEnvelope_EDSNBusinessDocumentHeader_Destination">
+    <xsd:sequence>
+      <xsd:element name="Receiver" type="ccma:MeterReadingRejectionResponseEnvelope_EDSNBusinessDocumentHeader_Destination_Receiver">
+        <xsd:annotation>
+          <xsd:documentation>Ontvanger van een bericht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Service" type="ccma:MeterReadingRejectionResponseEnvelope_EDSNBusinessDocumentHeader_Destination_Service">
+        <xsd:annotation>
+          <xsd:documentation>Service to be consumed</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionResponseEnvelope_EDSNBusinessDocumentHeader_Destination_Receiver">
+    <xsd:annotation>
+      <xsd:documentation>Ontvanger van een bericht.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Authority" type="ccma:MeterReadingRejectionResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor that qualifies the identifier used to identify the receiving party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ContactTypeIdentifier" type="ccma:MeterReadingRejectionResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Role in this business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ReceiverID" type="ccma:MeterReadingRejectionResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor with information to identify this party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionResponseEnvelope_EDSNBusinessDocumentHeader_Destination_Service">
+    <xsd:annotation>
+      <xsd:documentation>Service to be consumed</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ServiceMethod" type="ccma:MeterReadingRejectionResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Identifies a process within the service that processes on the business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ServiceName" type="ccma:MeterReadingRejectionResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Sender description of service to be carried out on the business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionResponseEnvelope_EDSNBusinessDocumentHeader_Manifest">
+    <xsd:annotation>
+      <xsd:documentation>Aangave van bijlagen en gerelateerde documenten.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="NumberofItems" type="ccma:MeterReadingRejectionResponseEnvelope_Numeric">
+        <xsd:annotation>
+          <xsd:documentation>Number of associated items</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="ManifestItem" type="ccma:MeterReadingRejectionResponseEnvelope_EDSNBusinessDocumentHeader_Manifest_ManifestItem">
+        <xsd:annotation>
+          <xsd:documentation>Bevat informatie over het gereferenceerde item.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionResponseEnvelope_EDSNBusinessDocumentHeader_Manifest_ManifestItem">
+    <xsd:annotation>
+      <xsd:documentation>Bevat informatie over het gereferenceerde item.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Description" type="ccma:MeterReadingRejectionResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Text description of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="ccma:MeterReadingRejectionResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>ISO 639 language code of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MimeTypeQualifierCode" type="ccma:MeterReadingRejectionResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>MIME Media Types Code describing the content of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="UniformResourceIdentifier" type="ccma:MeterReadingRejectionResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>URI of the item
+Identifier voor locatie en naam van een attachment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionResponseEnvelope_EDSNBusinessDocumentHeader_Source">
+    <xsd:annotation>
+      <xsd:documentation>Zender van een bericht.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Authority" type="ccma:MeterReadingRejectionResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor that qualifies the identifier used to identify the sending party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ContactTypeIdentifier" type="ccma:MeterReadingRejectionResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Role in this business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SenderID" type="ccma:MeterReadingRejectionResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor with information to identify this party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Content" name="MeterReadingRejectionResponseEnvelope_PC">
+    <xsd:annotation>
+      <xsd:documentation>Inhoud van een Portaal-bericht. Is een container-element op het hoogste niveau en wordt in elk bericht toegepast.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Rejection" minOccurs="0" maxOccurs="unbounded" name="Portaal_Rejection" type="ccma:MeterReadingRejectionResponseEnvelope_PC_PR">
+        <xsd:annotation>
+          <xsd:documentation>Een afwijzing op een vraag of verzoek. Portaal_Rejection (Afwijzing) heeft een relatie met MeteringPoint (Aansluiting). Bevat geen informatie over MeteringPoint.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Rejection" name="MeterReadingRejectionResponseEnvelope_PC_PR">
+    <xsd:annotation>
+      <xsd:documentation>Een afwijzing op een vraag of verzoek. Portaal_Rejection (Afwijzing) heeft een relatie met MeteringPoint (Aansluiting). Bevat geen informatie over MeteringPoint.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Rejection.Rejection" name="Rejection" type="ccma:MeterReadingRejectionResponseEnvelope_RejectionPortaalType">
+        <xsd:annotation>
+          <xsd:documentation>Een afwijzing op een vraag of verzoek (CDT).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_MeteringPoint" name="Portaal_MeteringPoint" type="ccma:MeterReadingRejectionResponseEnvelope_PC_PR_PMP">
+        <xsd:annotation>
+          <xsd:documentation>E??n of meer verbindingen tussen een net en een onroerende zaak als bedoeld in artikel 16, onderdelen a tot en met d, van de Wet waardering onroerende zaken. 
+Toelichting: Portaal-MeteringPoint bevat alle eigenschappen van een aansluiting die voor Portaal relevant kunnen zijn.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_MeteringPoint" name="MeterReadingRejectionResponseEnvelope_PC_PR_PMP">
+    <xsd:annotation>
+      <xsd:documentation>E??n of meer verbindingen tussen een net en een onroerende zaak als bedoeld in artikel 16, onderdelen a tot en met d, van de Wet waardering onroerende zaken. 
+Toelichting: Portaal-MeteringPoint bevat alle eigenschappen van een aansluiting die voor Portaal relevant kunnen zijn.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="EANID" type="ccma:MeterReadingRejectionResponseEnvelope_GSRNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>Uniek identificatienummer conform de Europese Artikel Nummering voor de aansluiting (LDT).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_MeteringPoint.ProductType" name="ProductType" type="ccma:MeterReadingRejectionResponseEnvelope_EnergyProductPortaalTypeCode">
+        <xsd:annotation>
+          <xsd:documentation>Type van de aansluiting: Electriciteit of Gas (EDT).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Mutation" name="Portaal_Mutation" type="ccma:MeterReadingRejectionResponseEnvelope_PC_PR_PMP_PM">
+        <xsd:annotation>
+          <xsd:documentation>Wijziging in een bestaande situatie. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Mutation" name="MeterReadingRejectionResponseEnvelope_PC_PR_PMP_PM">
+    <xsd:annotation>
+      <xsd:documentation>Wijziging in een bestaande situatie. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Mutation.Consumer" name="Consumer" type="ccma:MeterReadingRejectionResponseEnvelope_GLNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>Ontvangende marktpartij van het bericht (LDT).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Mutation.ExternalReference" minOccurs="0" maxOccurs="1" name="ExternalReference" type="ccma:MeterReadingRejectionResponseEnvelope_ReferenceTextType">
+        <xsd:annotation>
+          <xsd:documentation>Eigen referentie van de initi??rende marktpartij ter vereenvoudiging van zijn eigen interne procesgang. Max. 60 karakters (LDT).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Mutation.Initiator" name="Initiator" type="ccma:MeterReadingRejectionResponseEnvelope_GLNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>Zendende marktpartij van het bericht (LDT).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element sawsdl:modelReference="urn:nedu:edsn:lom:portaal:model:1:standard#Portaal_Mutation.MutationReason" name="MutationReason" type="ccma:MeterReadingRejectionResponseEnvelope_MutationReasonPortaalCode">
+        <xsd:annotation>
+          <xsd:documentation>Reden van de wijziging (EDT).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Dossier" type="ccma:MeterReadingRejectionResponseEnvelope_PC_PR_PMP_PM_Dossier">
+        <xsd:annotation>
+          <xsd:documentation>Dossier met informatie en identifiers van processen en transacties.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MeterReadingRejectionResponseEnvelope_PC_PR_PMP_PM_Dossier">
+    <xsd:annotation>
+      <xsd:documentation>Dossier met informatie en identifiers van processen en transacties.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ID" type="ccma:MeterReadingRejectionResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>Unieke identificatie van het dossier (LDT).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="MeterReadingRejectionResponseEnvelope_DateTime">
+    <xsd:annotation>
+      <xsd:documentation>Datum/tijd (dateTime).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:dateTime" />
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingRejectionResponseEnvelope_GLNEANCode">
+    <xsd:annotation>
+      <xsd:documentation>Global Location Number (GLN) conform de Europese Artikel Nummering.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="13" />
+      <xsd:pattern value="[0-9]{13}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingRejectionResponseEnvelope_GSRNEANCode">
+    <xsd:annotation>
+      <xsd:documentation>Global Service Relation Number (GSRN) conform de Europese Artikel Nummering.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="18" />
+      <xsd:pattern value="[0-9]{18}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingRejectionResponseEnvelope_Identifier">
+    <xsd:annotation>
+      <xsd:documentation>Identifier (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingRejectionResponseEnvelope_Indicator">
+    <xsd:annotation>
+      <xsd:documentation>Indicator (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingRejectionResponseEnvelope_Numeric">
+    <xsd:annotation>
+      <xsd:documentation>Nummer (getal).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal" />
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingRejectionResponseEnvelope_ReferenceTextType">
+    <xsd:annotation>
+      <xsd:documentation>Referentie (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="60" />
+      <xsd:minLength value="1" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType sawsdl:modelReference="urn:edsn:edsn:lom:cdt:model:2:standard#RejectionPortaalType" name="MeterReadingRejectionResponseEnvelope_RejectionPortaalType">
+    <xsd:annotation>
+      <xsd:documentation>Datatype voor inhoudelijke afwijzingen.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element sawsdl:modelReference="urn:edsn:edsn:lom:cdt:model:2:standard#RejectionPortaalType.RejectionCode" name="RejectionCode" type="ccma:MeterReadingRejectionResponseEnvelope_RejectionReasonPortaalCode">
+        <xsd:annotation>
+          <xsd:documentation>Code van de reden van de afwijzing</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element sawsdl:modelReference="urn:edsn:edsn:lom:cdt:model:2:standard#RejectionPortaalType.RejectionText" minOccurs="0" maxOccurs="1" name="RejectionText" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Toelichting op de reden van afwijzing</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="MeterReadingRejectionResponseEnvelope_Text">
+    <xsd:annotation>
+      <xsd:documentation>Tekst (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingRejectionResponseEnvelope_EnergyProductPortaalTypeCode">
+    <xsd:annotation>
+      <xsd:documentation>Code producttype Portaal.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ELK">
+        <xsd:annotation>
+          <xsd:documentation>Elektriciteit </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="GAS">
+        <xsd:annotation>
+          <xsd:documentation>Gas</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingRejectionResponseEnvelope_MutationReasonPortaalCode">
+    <xsd:annotation>
+      <xsd:documentation>Code mutatiereden / proces identificatie Portaal.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ALLMTCHG">
+        <xsd:annotation>
+          <xsd:documentation>Wijzigen allocatie methode</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CONNACT">
+        <xsd:annotation>
+          <xsd:documentation>Aansluiting activeren</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CONNCHG">
+        <xsd:annotation>
+          <xsd:documentation>Aansluiting wijziging </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CONNCRE">
+        <xsd:annotation>
+          <xsd:documentation>Aansluiting aanmaken </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CONNDACT">
+        <xsd:annotation>
+          <xsd:documentation>Aansluiting deactiveren </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CONNEND">
+        <xsd:annotation>
+          <xsd:documentation>Aansluiting verwijderen </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CONNUPD">
+        <xsd:annotation>
+          <xsd:documentation>Aansluiting wijzigen </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CONSMTR">
+        <xsd:annotation>
+          <xsd:documentation>Periodieke meterstand en verbruik</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DISPUTE">
+        <xsd:annotation>
+          <xsd:documentation>Dispuut over stand</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DSTRCONN">
+        <xsd:annotation>
+          <xsd:documentation>Stamgegevens op aanvraag</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DSTRMSTR">
+        <xsd:annotation>
+          <xsd:documentation>Stamgegevens distribueren </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ENDOFMV">
+        <xsd:annotation>
+          <xsd:documentation>Afmelden MV </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="EOSUPPLY">
+        <xsd:annotation>
+          <xsd:documentation>Einde levering</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="HISTMTR">
+        <xsd:annotation>
+          <xsd:documentation>Opvraag historische meetgegevens</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MONTHMTR">
+        <xsd:annotation>
+          <xsd:documentation>Maand stand (1e kalenderdag van de maand 0:00)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="INDHSE">
+        <xsd:annotation>
+          <xsd:documentation>Individuele calorische waarden ingevoed gas (eerste aanlevering)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="INDHSH">
+        <xsd:annotation>
+          <xsd:documentation>Individuele calorische waarden ingevoed gas (heraanlevering)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MDMD">
+        <xsd:annotation>
+          <xsd:documentation>Opvraag stamgegevens meetinrichting</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MDPPMD">
+        <xsd:annotation>
+          <xsd:documentation>Opvraag gegevens primair deel meetinrichting</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MOVEIN">
+        <xsd:annotation>
+          <xsd:documentation>Inhuizing </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MOVEOUT">
+        <xsd:annotation>
+          <xsd:documentation>Uithuizing</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MTREND">
+        <xsd:annotation>
+          <xsd:documentation>Meter verwijderen </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MTRINST">
+        <xsd:annotation>
+          <xsd:documentation>Meter installeren </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MTRUPD">
+        <xsd:annotation>
+          <xsd:documentation>Meter wijzigen (metermutatie)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NAMECHG">
+        <xsd:annotation>
+          <xsd:documentation>Naamswijziging </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NMCRSCMP">
+        <xsd:annotation>
+          <xsd:documentation>Wijzigen van zowel naam als verblijfsfunctie / complexbepaling</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ONRQST">
+        <xsd:annotation>
+          <xsd:documentation>Op verzoek</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PERMTR">
+        <xsd:annotation>
+          <xsd:documentation>Periodieke meterstand</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PHYSMTR">
+        <xsd:annotation>
+          <xsd:documentation>Fysieke opname</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="RESCOMP">
+        <xsd:annotation>
+          <xsd:documentation>Wijzigen verblijfsfunctie / complexbepaling</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SWITCHLV">
+        <xsd:annotation>
+          <xsd:documentation>Leverancierswitch </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SWITCHMV">
+        <xsd:annotation>
+          <xsd:documentation>MV-switch </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SWITCHPV">
+        <xsd:annotation>
+          <xsd:documentation>PV/Shipper-switch </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SWTCHUPD">
+        <xsd:annotation>
+          <xsd:documentation>Switchbaarheid wijzigen </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="MeterReadingRejectionResponseEnvelope_RejectionReasonPortaalCode">
+    <xsd:annotation>
+      <xsd:documentation>Code afwijsreden Portaal.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="200">
+        <xsd:annotation>
+          <xsd:documentation>Aanvraag/melding onvolledig of syntactisch onjuist</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="201">
+        <xsd:annotation>
+          <xsd:documentation>EAN-code aansluiting onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="202">
+        <xsd:annotation>
+          <xsd:documentation>EAN-code opvragende partij onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="203">
+        <xsd:annotation>
+          <xsd:documentation>EAN-code aansluiting onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="204">
+        <xsd:annotation>
+          <xsd:documentation>EAN-code leverancier onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="205">
+        <xsd:annotation>
+          <xsd:documentation>EAN-code MV onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="207">
+        <xsd:annotation>
+          <xsd:documentation>EAN-code PV onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="208">
+        <xsd:annotation>
+          <xsd:documentation>Geblokkeerd voor automatische mutaties</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="209">
+        <xsd:annotation>
+          <xsd:documentation>Geen geldige (combinatie van) zoekcriteria</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="210">
+        <xsd:annotation>
+          <xsd:documentation>Indientermijn onjuist</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="213">
+        <xsd:annotation>
+          <xsd:documentation>Niet afgeschakeld of geen schakelopdracht 'uit' ontvangen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="214">
+        <xsd:annotation>
+          <xsd:documentation>Ontvanger onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="215">
+        <xsd:annotation>
+          <xsd:documentation>Transactiedossier onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="216">
+        <xsd:annotation>
+          <xsd:documentation>Transactiedossiernummer onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="217">
+        <xsd:annotation>
+          <xsd:documentation>Totaaltelling bedrag Ex BTW Hoog onjuist</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="218">
+        <xsd:annotation>
+          <xsd:documentation>Totaaltelling BTW bedrag Hoog onjuist</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="219">
+        <xsd:annotation>
+          <xsd:documentation>Totaaltelling bedrag Ex BTW Laag onjuist</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="220">
+        <xsd:annotation>
+          <xsd:documentation>Totaaltelling BTW bedrag Laag onjuist</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="221">
+        <xsd:annotation>
+          <xsd:documentation>Totaaltelling bedrag Ex BTW Nul onjuist</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="222">
+        <xsd:annotation>
+          <xsd:documentation>Totaaltelling BTW bedrag Nul onjuist</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="223">
+        <xsd:annotation>
+          <xsd:documentation>BTW percentage onjuist toegepast</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="224">
+        <xsd:annotation>
+          <xsd:documentation>Totaal generaal onjuist</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="225">
+        <xsd:annotation>
+          <xsd:documentation>Onjuiste aanbiedingsdatum</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="226">
+        <xsd:annotation>
+          <xsd:documentation>Over de betreffende periode en BTW nummer is al een aanvullende afdrachtspecificatie ontvangen</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="227">
+        <xsd:annotation>
+          <xsd:documentation>Kruisend bericht</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="228">
+        <xsd:annotation>
+          <xsd:documentation>Transactiedossierstap onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="229">
+        <xsd:annotation>
+          <xsd:documentation>Achternaam ontbreekt en geen leverancier in AR op mutatiedatum</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="230">
+        <xsd:annotation>
+          <xsd:documentation>EAN-code netbeheerder onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="231">
+        <xsd:annotation>
+          <xsd:documentation>Vastgestelde meetdata is te oud</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="232">
+        <xsd:annotation>
+          <xsd:documentation>Oplevering dispuut- of niet-event standen niet mogelijk voor GV</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="234">
+        <xsd:annotation>
+          <xsd:documentation>Aansluiting niet voorzien van meetinrichting</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="235">
+        <xsd:annotation>
+          <xsd:documentation>Aantal meterstanden ongelijk aantal actieve telwerken</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="236">
+        <xsd:annotation>
+          <xsd:documentation>Aantal posities in meterstanden ongelijk aan aantal posities telwerken</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="237">
+        <xsd:annotation>
+          <xsd:documentation>Leverancier is niet de actuele leverancier</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="238">
+        <xsd:annotation>
+          <xsd:documentation>Stand ligt voor reeds vastgestelde stand</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="239">
+        <xsd:annotation>
+          <xsd:documentation>Leverancier is niet de initiator van het event</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="240">
+        <xsd:annotation>
+          <xsd:documentation>Geen event bekend op opnamedatum</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="241">
+        <xsd:annotation>
+          <xsd:documentation>Geen historische meetdata beschikbaar</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="242">
+        <xsd:annotation>
+          <xsd:documentation>Opvraag betreft een KV-aansluiting</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="243">
+        <xsd:annotation>
+          <xsd:documentation>Zender onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="244">
+        <xsd:annotation>
+          <xsd:documentation>Soort bestand onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="245">
+        <xsd:annotation>
+          <xsd:documentation>(Deel)bestand ontbreekt</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="246">
+        <xsd:annotation>
+          <xsd:documentation>Deelbestand incorrect</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="247">
+        <xsd:annotation>
+          <xsd:documentation>Bestand onbekend</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="248">
+        <xsd:annotation>
+          <xsd:documentation>Geadresseerde van afmelding/afwijzing is niet gelijk aan afzender van het bestand</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="249">
+        <xsd:annotation>
+          <xsd:documentation>Afzender van afmelding/afwijzing is niet gelijk aan geadresseerde van het bestand</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="254">
+        <xsd:annotation>
+          <xsd:documentation>Vastgestelde stand niet mogelijk bij GV-aansluiting.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="255">
+        <xsd:annotation>
+          <xsd:documentation>Ongeldige domeinwaarde</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="256">
+        <xsd:annotation>
+          <xsd:documentation>Aansluiting niet geregistreerd als een invoedaansluiting.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

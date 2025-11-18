@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:ccma5="urn:edsn:edsn:data:soapfault:1:standard" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:meteringpointinformation:1:standard" xmlns:ccma4="urn:nedu:edsn:data:getmeteringpointresponse:1:standard" xmlns:ccma2="urn:nedu:edsn:data:searchmeteringpointsresponse:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:searchmeteringpointsrequest:1:standard" xmlns:ccma3="urn:nedu:edsn:data:getmeteringpointrequest:1:standard" targetNamespace="urn:nedu:edsn:service:meteringpointinformation:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="SearchMeteringPointsRequest_1p1.xsd" namespace="urn:nedu:edsn:data:searchmeteringpointsrequest:1:standard" />
+      <xsd:import schemaLocation="SearchMeteringPointsResponse_1p3.xsd" namespace="urn:nedu:edsn:data:searchmeteringpointsresponse:1:standard" />
+      <xsd:import schemaLocation="GetMeteringPointRequest_1p0.xsd" namespace="urn:nedu:edsn:data:getmeteringpointrequest:1:standard" />
+      <xsd:import schemaLocation="GetMeteringPointResponse_1p2.xsd" namespace="urn:nedu:edsn:data:getmeteringpointresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="SearchMeteringPointsRequestEnvelope">
+    <part name="part1" element="ccma1:SearchMeteringPointsRequestEnvelope" />
+  </message>
+  <message name="SearchMeteringPointsResponseEnvelope">
+    <part name="part1" element="ccma2:SearchMeteringPointsResponseEnvelope" />
+  </message>
+  <message name="GetMeteringPointRequestEnvelope">
+    <part name="part1" element="ccma3:GetMeteringPointRequestEnvelope" />
+  </message>
+  <message name="GetMeteringPointResponseEnvelope">
+    <part name="part1" element="ccma4:GetMeteringPointResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma5:SOAPFault" />
+  </message>
+  <portType name="MeteringPointInformationPortType">
+    <operation name="SearchMeteringPoints">
+      <input message="ws:SearchMeteringPointsRequestEnvelope" />
+      <output message="ws:SearchMeteringPointsResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="GetMeteringPoint">
+      <input message="ws:GetMeteringPointRequestEnvelope" />
+      <output message="ws:GetMeteringPointResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="MeteringPointInformationBinding" type="ws:MeteringPointInformationPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="SearchMeteringPoints">
+      <soap:operation soapAction="urn:SearchMeteringPoints" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="GetMeteringPoint">
+      <soap:operation soapAction="urn:GetMeteringPoint" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="MeteringPointInformation">
+    <port name="MeteringPointInformationPort" binding="ws:MeteringPointInformationBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderMeteringPointInformationRespondingActivity" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:ccma3="urn:nedu:edsn:data:measurecorrectionrequest:1:standard" xmlns:ccma2="urn:nedu:edsn:data:measurecorrectionacknowledgement:1:standard" xmlns:ccma9="urn:edsn:edsn:data:soapfault:1:standard" xmlns:ccma8="urn:nedu:edsn:data:measurecorrectionresultresponse:1:standard" xmlns:ws="urn:nedu:edsn:service:measurecorrection:1:standard" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma5="urn:nedu:edsn:data:measurecorrectionresultnotification:1:standard" xmlns:ccma4="urn:nedu:edsn:data:measurecorrectionresponse:1:standard" xmlns:ccma7="urn:nedu:edsn:data:measurecorrectionresultrequest:1:standard" xmlns:ccma6="urn:nedu:edsn:data:measurecorrectionresultacknowledgement:1:standard" xmlns:ccma1="urn:nedu:edsn:data:measurecorrectionnotification:1:standard" targetNamespace="urn:nedu:edsn:service:measurecorrection:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="MeasureCorrectionNotification_1p0.xsd" namespace="urn:nedu:edsn:data:measurecorrectionnotification:1:standard" />
+      <xsd:import schemaLocation="MeasureCorrectionAcknowledgement_1p0.xsd" namespace="urn:nedu:edsn:data:measurecorrectionacknowledgement:1:standard" />
+      <xsd:import schemaLocation="MeasureCorrectionRequest_1p0.xsd" namespace="urn:nedu:edsn:data:measurecorrectionrequest:1:standard" />
+      <xsd:import schemaLocation="MeasureCorrectionResponse_1p0.xsd" namespace="urn:nedu:edsn:data:measurecorrectionresponse:1:standard" />
+      <xsd:import schemaLocation="MeasureCorrectionResultNotification_1p0.xsd" namespace="urn:nedu:edsn:data:measurecorrectionresultnotification:1:standard" />
+      <xsd:import schemaLocation="MeasureCorrectionResultAcknowledgement_1p0.xsd" namespace="urn:nedu:edsn:data:measurecorrectionresultacknowledgement:1:standard" />
+      <xsd:import schemaLocation="MeasureCorrectionResultRequest_1p0.xsd" namespace="urn:nedu:edsn:data:measurecorrectionresultrequest:1:standard" />
+      <xsd:import schemaLocation="MeasureCorrectionResultResponse_1p0.xsd" namespace="urn:nedu:edsn:data:measurecorrectionresultresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="MeasureCorrectionNotificationEnvelope">
+    <part name="part1" element="ccma1:MeasureCorrectionNotificationEnvelope" />
+  </message>
+  <message name="MeasureCorrectionAcknowledgementEnvelope">
+    <part name="part1" element="ccma2:MeasureCorrectionAcknowledgementEnvelope" />
+  </message>
+  <message name="MeasureCorrectionRequestEnvelope">
+    <part name="part1" element="ccma3:MeasureCorrectionRequestEnvelope" />
+  </message>
+  <message name="MeasureCorrectionResponseEnvelope">
+    <part name="part1" element="ccma4:MeasureCorrectionResponseEnvelope" />
+  </message>
+  <message name="MeasureCorrectionResultNotificationEnvelope">
+    <part name="part1" element="ccma5:MeasureCorrectionResultNotificationEnvelope" />
+  </message>
+  <message name="MeasureCorrectionResultAcknowledgementEnvelope">
+    <part name="part1" element="ccma6:MeasureCorrectionResultAcknowledgementEnvelope" />
+  </message>
+  <message name="MeasureCorrectionResultRequestEnvelope">
+    <part name="part1" element="ccma7:MeasureCorrectionResultRequestEnvelope" />
+  </message>
+  <message name="MeasureCorrectionResultResponseEnvelope">
+    <part name="part1" element="ccma8:MeasureCorrectionResultResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma9:SOAPFault" />
+  </message>
+  <portType name="MeasureCorrectionPortType">
+    <operation name="MeasureCorrectionNotification">
+      <input message="ws:MeasureCorrectionNotificationEnvelope" />
+      <output message="ws:MeasureCorrectionAcknowledgementEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="MeasureCorrectionRequest">
+      <input message="ws:MeasureCorrectionRequestEnvelope" />
+      <output message="ws:MeasureCorrectionResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="MeasureCorrectionResultNotification">
+      <input message="ws:MeasureCorrectionResultNotificationEnvelope" />
+      <output message="ws:MeasureCorrectionResultAcknowledgementEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="MeasureCorrectionResultRequest">
+      <input message="ws:MeasureCorrectionResultRequestEnvelope" />
+      <output message="ws:MeasureCorrectionResultResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="MeasureCorrectionBinding" type="ws:MeasureCorrectionPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="MeasureCorrectionNotification">
+      <soap:operation soapAction="urn:MeasureCorrectionNotification" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="MeasureCorrectionRequest">
+      <soap:operation soapAction="urn:MeasureCorrectionRequest" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="MeasureCorrectionResultNotification">
+      <soap:operation soapAction="urn:MeasureCorrectionResultNotification" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="MeasureCorrectionResultRequest">
+      <soap:operation soapAction="urn:MeasureCorrectionResultRequest" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="MeasureCorrection">
+    <port name="MeasureCorrectionPort" binding="ws:MeasureCorrectionBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderMeasureCorrectionRespondingActivity" />
+    </port>
+  </service>
+</definitions>

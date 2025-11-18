@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:moveinbatch:1:standard" xmlns:ccma2="urn:nedu:edsn:data:moveinbatchresponse:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:moveinbatchrequest:1:standard" xmlns:ccma3="urn:edsn:edsn:data:soapfault:1:standard" targetNamespace="urn:nedu:edsn:service:moveinbatch:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="MoveInBatchRequest_1p2.xsd" namespace="urn:nedu:edsn:data:moveinbatchrequest:1:standard" />
+      <xsd:import schemaLocation="MoveInBatchResponse_1p0.xsd" namespace="urn:nedu:edsn:data:moveinbatchresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="MoveInBatchRequestEnvelope">
+    <part name="part1" element="ccma1:MoveInBatchRequestEnvelope" />
+  </message>
+  <message name="MoveInBatchResponseEnvelope">
+    <part name="part1" element="ccma2:MoveInBatchResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma3:SOAPFault" />
+  </message>
+  <portType name="MoveInBatchPortType">
+    <operation name="MoveInBatch">
+      <input message="ws:MoveInBatchRequestEnvelope" />
+      <output message="ws:MoveInBatchResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="MoveInBatchBinding" type="ws:MoveInBatchPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="MoveInBatch">
+      <soap:operation soapAction="urn:MoveInBatch" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="MoveInBatch">
+    <port name="MoveInBatchPort" binding="ws:MoveInBatchBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderMoveInBatchRespondingActivity" />
+    </port>
+  </service>
+</definitions>

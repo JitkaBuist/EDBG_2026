@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:masterdataupdate:2:standard" xmlns:ccma2="urn:nedu:edsn:data:masterdataupdateresponse:2:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:masterdataupdaterequest:1:standard" xmlns:ccma3="urn:edsn:edsn:data:soapfault:1:standard" targetNamespace="urn:nedu:edsn:service:masterdataupdate:2:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="MasterDataUpdateRequest_1p0.xsd" namespace="urn:nedu:edsn:data:masterdataupdaterequest:1:standard" />
+      <xsd:import schemaLocation="MasterDataUpdateResponse_2p1.xsd" namespace="urn:nedu:edsn:data:masterdataupdateresponse:2:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="MasterDataUpdateRequestEnvelope">
+    <part name="part1" element="ccma1:MasterDataUpdateRequestEnvelope" />
+  </message>
+  <message name="MasterDataUpdateResponseEnvelope">
+    <part name="part1" element="ccma2:MasterDataUpdateResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma3:SOAPFault" />
+  </message>
+  <portType name="MasterDataUpdatePortType">
+    <operation name="MasterDataUpdate">
+      <input message="ws:MasterDataUpdateRequestEnvelope" />
+      <output message="ws:MasterDataUpdateResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="MasterDataUpdateBinding" type="ws:MasterDataUpdatePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="MasterDataUpdate">
+      <soap:operation soapAction="urn:MasterDataUpdate" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="MasterDataUpdate">
+    <port name="MasterDataUpdatePort" binding="ws:MasterDataUpdateBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderMasterDataUpdateRespondingActivity" />
+    </port>
+  </service>
+</definitions>

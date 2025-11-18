@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:bm7="urn:nl:edsn:service:fileprocessingrequest:env:1" xmlns:tns="urn:nl:edsn:service:fileprocessing:trans:1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bm8="urn:nl:edsn:service:fileprocessingresponse:env:1" xmlns:sft="urn:edsn:edsn:data:soapfault:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="FileProcessing" targetNamespace="urn:nl:edsn:service:fileprocessing:trans:1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>version 1.1 dated 19/10/2012</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="urn:nl:edsn:service:fileprocessing:trans:1">
+      <xs:import schemaLocation="FileProcessingRequest_1p0.xsd" namespace="urn:nl:edsn:service:fileprocessingrequest:env:1" />
+      <xs:import schemaLocation="FileProcessingResponse_1p0.xsd" namespace="urn:nl:edsn:service:fileprocessingresponse:env:1" />
+      <xs:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="RequestMsg">
+    <wsdl:part name="FileProcessingRequestEnvelope" element="bm7:FileProcessingRequestEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="PositiveResponseMsg">
+    <wsdl:part name="FileProcessingResponseEnvelope" element="bm8:FileProcessingResponseEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="SOAPFault">
+    <wsdl:part name="fault" element="sft:SOAPFault" />
+  </wsdl:message>
+  <wsdl:portType name="FileProcessing">
+    <wsdl:operation name="FileProcessingRequest">
+      <wsdl:input message="tns:RequestMsg" />
+      <wsdl:output message="tns:PositiveResponseMsg" />
+      <wsdl:fault name="fault" message="tns:SOAPFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FileProcessingBinding" type="tns:FileProcessing">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FileProcessingRequest">
+      <soap:operation soapAction="FileProcessingRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="FileProcessingRequestEnvelope" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="FileProcessingResponseEnvelope" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FileProcessingService">
+    <wsdl:port name="FileProcessingPort" binding="tns:FileProcessingBinding">
+      <soap:address location="http://localhost:7001/b2b/bulk/generic/FileProcessing" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

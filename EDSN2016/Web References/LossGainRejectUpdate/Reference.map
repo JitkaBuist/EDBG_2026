@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/LossGainRejectUpdate_1p0/UpdateResultRequest_1p0.xsd" filename="UpdateResultRequest_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/LossGainRejectUpdate_1p0/RejectionResultRequest_1p0.xsd" filename="RejectionResultRequest_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/LossGainRejectUpdate_1p0/UpdateResultResponse_1p0.xsd" filename="UpdateResultResponse_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/LossGainRejectUpdate_1p0/LossResultResponse_1p0.xsd" filename="LossResultResponse_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/LossGainRejectUpdate_1p0/LossGainRejectUpdate_1.wsdl" filename="LossGainRejectUpdate_1.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/LossGainRejectUpdate_1p0/LossResultRequest_1p0.xsd" filename="LossResultRequest_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/LossGainRejectUpdate_1p0/RejectionResultResponse_1p0.xsd" filename="RejectionResultResponse_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/LossGainRejectUpdate_1p0/GainResultRequest_1p0.xsd" filename="GainResultRequest_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/LossGainRejectUpdate_1p0/GainResultResponse_1p0.xsd" filename="GainResultResponse_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/LossGainRejectUpdate_1p0/SOAPFault_1p0.xsd" filename="SOAPFault_1p0.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

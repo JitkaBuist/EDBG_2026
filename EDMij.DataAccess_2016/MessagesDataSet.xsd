@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="EnergieDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Public" Name="EnergieDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Energie.DataAccess.Properties.Settings.GlobalReference.Default.EnergieDBConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OutboxTypesTableAdapter" GeneratorDataComponentClassName="OutboxTypesTableAdapter" Name="OutboxTypes" UserDataComponentName="OutboxTypesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EnergieDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="False" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="False">
+                    <CommandText>SELECT     ID, Omschrijving
+FROM         Messages.dbo.Outboxtypes
+UNION
+SELECT     0 AS ID, '(alle)' AS Omschrijving</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Omschrijving" DataSetColumn="Omschrijving" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EdineTypesTableAdapter" GeneratorDataComponentClassName="EdineTypesTableAdapter" Name="EdineTypes" UserDataComponentName="EdineTypesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EnergieDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="False" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="True" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>SELECT     ID, Messagetype, Messagenaam
+FROM         Messages.dbo.EdineMessagetypes
+UNION
+SELECT     0 AS ID, '(alle)' AS  Messagetype, ' ' AS  Messagenaam</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Messagetype" DataSetColumn="Messagetype" />
+              <Mapping SourceColumn="Messagenaam" DataSetColumn="Messagenaam" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="OutboxTypes" msprop:Generator_UserTableName="OutboxTypes" msprop:Generator_RowDeletedName="OutboxTypesRowDeleted" msprop:Generator_RowChangedName="OutboxTypesRowChanged" msprop:Generator_RowClassName="OutboxTypesRow" msprop:Generator_RowChangingName="OutboxTypesRowChanging" msprop:Generator_RowEvArgName="OutboxTypesRowChangeEvent" msprop:Generator_RowEvHandlerName="OutboxTypesRowChangeEventHandler" msprop:Generator_TableClassName="OutboxTypesDataTable" msprop:Generator_TableVarName="tableOutboxTypes" msprop:Generator_RowDeletingName="OutboxTypesRowDeleting" msprop:Generator_TablePropName="OutboxTypes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Omschrijving" msprop:Generator_UserColumnName="Omschrijving" msprop:Generator_ColumnPropNameInRow="Omschrijving" msprop:Generator_ColumnVarNameInTable="columnOmschrijving" msprop:Generator_ColumnPropNameInTable="OmschrijvingColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="400" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EdineTypes" msprop:Generator_UserTableName="EdineTypes" msprop:Generator_RowDeletedName="EdineTypesRowDeleted" msprop:Generator_TableClassName="EdineTypesDataTable" msprop:Generator_RowChangedName="EdineTypesRowChanged" msprop:Generator_RowClassName="EdineTypesRow" msprop:Generator_RowChangingName="EdineTypesRowChanging" msprop:Generator_RowEvArgName="EdineTypesRowChangeEvent" msprop:Generator_RowEvHandlerName="EdineTypesRowChangeEventHandler" msprop:Generator_TablePropName="EdineTypes" msprop:Generator_TableVarName="tableEdineTypes" msprop:Generator_RowDeletingName="EdineTypesRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Messagetype" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Messagetype" msprop:Generator_ColumnPropNameInRow="Messagetype" msprop:Generator_ColumnVarNameInTable="columnMessagetype" msprop:Generator_ColumnPropNameInTable="MessagetypeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Messagenaam" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Messagenaam" msprop:Generator_ColumnPropNameInRow="Messagenaam" msprop:Generator_ColumnVarNameInTable="columnMessagenaam" msprop:Generator_ColumnPropNameInTable="MessagenaamColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

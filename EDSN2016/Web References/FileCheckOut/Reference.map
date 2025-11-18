@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://127.0.0.1/FileCheckOutResponse_1p0.xsd" filename="FileCheckOutResponse_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://127.0.0.1/FileCheckOut.wsdl" filename="FileCheckOut.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://127.0.0.1/SOAPFault_1p0.xsd" filename="SOAPFault_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://127.0.0.1/FileCheckOutRequest_1p0.xsd" filename="FileCheckOutRequest_1p0.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

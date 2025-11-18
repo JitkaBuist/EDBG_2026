@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/Users/piete/OneDrive - Mink I.T/Documenten/EDBG/NajaarsRelease 2021/P4/GetHistoricalSmartMeterReadingSeries_1p0/GetHistoricalSmartMeterReadingSeries_1.wsdl" filename="GetHistoricalSmartMeterReadingSeries_1.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/piete/OneDrive - Mink I.T/Documenten/EDBG/NajaarsRelease 2021/P4/GetHistoricalSmartMeterReadingSeries_1p0/SOAPFault_1p0.xsd" filename="SOAPFault_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/piete/OneDrive - Mink I.T/Documenten/EDBG/NajaarsRelease 2021/P4/GetHistoricalSmartMeterReadingSeries_1p0/GetHistoricalSmartMeterReadingSeriesRequest_1p0.xsd" filename="GetHistoricalSmartMeterReadingSeriesRequest_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/piete/OneDrive - Mink I.T/Documenten/EDBG/NajaarsRelease 2021/P4/GetHistoricalSmartMeterReadingSeries_1p0/GetHistoricalSmartMeterReadingSeriesResponse_1p0.xsd" filename="GetHistoricalSmartMeterReadingSeriesResponse_1p0.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

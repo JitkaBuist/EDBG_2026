@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:ccma3="urn:nedu:edsn:data:gainresultrequest:1:standard" xmlns:ccma2="urn:nedu:edsn:data:lossresultresponse:1:standard" xmlns:ccma9="urn:edsn:edsn:data:soapfault:1:standard" xmlns:ccma8="urn:nedu:edsn:data:updateresultresponse:1:standard" xmlns:ws="urn:nedu:edsn:service:lossgainrejectupdate:1:standard" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma5="urn:nedu:edsn:data:rejectionresultrequest:1:standard" xmlns:ccma4="urn:nedu:edsn:data:gainresultresponse:1:standard" xmlns:ccma7="urn:nedu:edsn:data:updateresultrequest:1:standard" xmlns:ccma6="urn:nedu:edsn:data:rejectionresultresponse:1:standard" xmlns:ccma1="urn:nedu:edsn:data:lossresultrequest:1:standard" targetNamespace="urn:nedu:edsn:service:lossgainrejectupdate:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="LossResultRequest_1p0.xsd" namespace="urn:nedu:edsn:data:lossresultrequest:1:standard" />
+      <xsd:import schemaLocation="LossResultResponse_1p0.xsd" namespace="urn:nedu:edsn:data:lossresultresponse:1:standard" />
+      <xsd:import schemaLocation="GainResultRequest_1p0.xsd" namespace="urn:nedu:edsn:data:gainresultrequest:1:standard" />
+      <xsd:import schemaLocation="GainResultResponse_1p0.xsd" namespace="urn:nedu:edsn:data:gainresultresponse:1:standard" />
+      <xsd:import schemaLocation="RejectionResultRequest_1p0.xsd" namespace="urn:nedu:edsn:data:rejectionresultrequest:1:standard" />
+      <xsd:import schemaLocation="RejectionResultResponse_1p0.xsd" namespace="urn:nedu:edsn:data:rejectionresultresponse:1:standard" />
+      <xsd:import schemaLocation="UpdateResultRequest_1p0.xsd" namespace="urn:nedu:edsn:data:updateresultrequest:1:standard" />
+      <xsd:import schemaLocation="UpdateResultResponse_1p0.xsd" namespace="urn:nedu:edsn:data:updateresultresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="LossResultRequestEnvelope">
+    <part name="part1" element="ccma1:LossResultRequestEnvelope" />
+  </message>
+  <message name="LossResultResponseEnvelope">
+    <part name="part1" element="ccma2:LossResultResponseEnvelope" />
+  </message>
+  <message name="GainResultRequestEnvelope">
+    <part name="part1" element="ccma3:GainResultRequestEnvelope" />
+  </message>
+  <message name="GainResultResponseEnvelope">
+    <part name="part1" element="ccma4:GainResultResponseEnvelope" />
+  </message>
+  <message name="RejectionResultRequestEnvelope">
+    <part name="part1" element="ccma5:RejectionResultRequestEnvelope" />
+  </message>
+  <message name="RejectionResultResponseEnvelope">
+    <part name="part1" element="ccma6:RejectionResultResponseEnvelope" />
+  </message>
+  <message name="UpdateResultRequestEnvelope">
+    <part name="part1" element="ccma7:UpdateResultRequestEnvelope" />
+  </message>
+  <message name="UpdateResultResponseEnvelope">
+    <part name="part1" element="ccma8:UpdateResultResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma9:SOAPFault" />
+  </message>
+  <portType name="LossGainRejectUpdatePortType">
+    <operation name="LossResult">
+      <input message="ws:LossResultRequestEnvelope" />
+      <output message="ws:LossResultResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="GainResult">
+      <input message="ws:GainResultRequestEnvelope" />
+      <output message="ws:GainResultResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="RejectionResult">
+      <input message="ws:RejectionResultRequestEnvelope" />
+      <output message="ws:RejectionResultResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="UpdateResult">
+      <input message="ws:UpdateResultRequestEnvelope" />
+      <output message="ws:UpdateResultResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="LossGainRejectUpdateBinding" type="ws:LossGainRejectUpdatePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="LossResult">
+      <soap:operation soapAction="urn:LossResultRequestEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="GainResult">
+      <soap:operation soapAction="urn:GainResultRequestEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="RejectionResult">
+      <soap:operation soapAction="urn:RejectionResultRequestEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="UpdateResult">
+      <soap:operation soapAction="urn:UpdateResultRequestEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="LossGainRejectUpdate">
+    <port name="LossGainRejectUpdatePort" binding="ws:LossGainRejectUpdateBinding">
+      <soap:address location="http://" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/NoticeEOS_1p3/NoticeEOSNotification_1p3.xsd" filename="NoticeEOSNotification_1p3.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/NoticeEOS_1p3/NoticeEOSAcknowledgement_1p0.xsd" filename="NoticeEOSAcknowledgement_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/NoticeEOS_1p3/NoticeEOSRequest_1p0.xsd" filename="NoticeEOSRequest_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/NoticeEOS_1p3/NoticeEOSResponse_1p3.xsd" filename="NoticeEOSResponse_1p3.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/NoticeEOS_1p3/SOAPFault_1p0.xsd" filename="SOAPFault_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/NoticeEOS_1p3/NoticeEOS_1.wsdl" filename="NoticeEOS_1.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

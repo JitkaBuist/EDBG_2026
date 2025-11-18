@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/NameChangeBatch_1p1/NameChangeBatchRequest_1p1.xsd" filename="NameChangeBatchRequest_1p1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/NameChangeBatch_1p1/NameChangeBatch_1.wsdl" filename="NameChangeBatch_1.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/NameChangeBatch_1p1/SOAPFault_1p0.xsd" filename="SOAPFault_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/NameChangeBatch_1p1/NameChangeBatchResponse_1p0.xsd" filename="NameChangeBatchResponse_1p0.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

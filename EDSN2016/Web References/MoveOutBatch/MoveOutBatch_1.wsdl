@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:moveoutbatch:1:standard" xmlns:ccma2="urn:nedu:edsn:data:moveoutbatchresponse:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:moveoutbatchrequest:1:standard" xmlns:ccma3="urn:edsn:edsn:data:soapfault:1:standard" targetNamespace="urn:nedu:edsn:service:moveoutbatch:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="MoveOutBatchRequest_1p0.xsd" namespace="urn:nedu:edsn:data:moveoutbatchrequest:1:standard" />
+      <xsd:import schemaLocation="MoveOutBatchResponse_1p0.xsd" namespace="urn:nedu:edsn:data:moveoutbatchresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="MoveOutBatchRequestEnvelope">
+    <part name="part1" element="ccma1:MoveOutBatchRequestEnvelope" />
+  </message>
+  <message name="MoveOutBatchResponseEnvelope">
+    <part name="part1" element="ccma2:MoveOutBatchResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma3:SOAPFault" />
+  </message>
+  <portType name="MoveOutBatchPortType">
+    <operation name="MoveOutBatch">
+      <input message="ws:MoveOutBatchRequestEnvelope" />
+      <output message="ws:MoveOutBatchResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="MoveOutBatchBinding" type="ws:MoveOutBatchPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="MoveOutBatch">
+      <soap:operation soapAction="urn:MoveOutBatchRequestEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="MoveOutBatch">
+    <port name="MoveOutBatchPort" binding="ws:MoveOutBatchBinding">
+      <soap:address location="http://" />
+    </port>
+  </service>
+</definitions>

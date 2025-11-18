@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:ccma3="urn:nedu:edsn:data:meterreadingexchangerequest:1:standard" xmlns:ccma2="urn:nedu:edsn:data:meterreadingexchangeacknowledgement:1:standard" xmlns:ccma10="urn:nedu:edsn:data:meterreadingrejectionresponse:1:standard" xmlns:ccma9="urn:nedu:edsn:data:meterreadingrejectionrequest:1:standard" xmlns:ccma8="urn:nedu:edsn:data:meterreadingrejectionacknowledgement:1:standard" xmlns:ccma11="urn:edsn:edsn:data:soapfault:1:standard" xmlns:ws="urn:nedu:edsn:service:meterreading:1:standard" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma5="urn:nedu:edsn:data:rejectionmeterreadingrequest:1:standard" xmlns:ccma4="urn:nedu:edsn:data:meterreadingexchangeresponse:1:standard" xmlns:ccma7="urn:nedu:edsn:data:meterreadingrejectionnotification:1:standard" xmlns:ccma6="urn:nedu:edsn:data:rejectionmeterreadingresponse:1:standard" xmlns:ccma1="urn:nedu:edsn:data:meterreadingexchangenotification:1:standard" targetNamespace="urn:nedu:edsn:service:meterreading:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="MeterReadingExchangeNotification_1p2.xsd" namespace="urn:nedu:edsn:data:meterreadingexchangenotification:1:standard" />
+      <xsd:import schemaLocation="MeterReadingExchangeAcknowledgement_1p0.xsd" namespace="urn:nedu:edsn:data:meterreadingexchangeacknowledgement:1:standard" />
+      <xsd:import schemaLocation="MeterReadingExchangeRequest_1p0.xsd" namespace="urn:nedu:edsn:data:meterreadingexchangerequest:1:standard" />
+      <xsd:import schemaLocation="MeterReadingExchangeResponse_1p2.xsd" namespace="urn:nedu:edsn:data:meterreadingexchangeresponse:1:standard" />
+      <xsd:import schemaLocation="RejectionMeterReadingRequest_1p0.xsd" namespace="urn:nedu:edsn:data:rejectionmeterreadingrequest:1:standard" />
+      <xsd:import schemaLocation="RejectionMeterReadingResponse_1p0.xsd" namespace="urn:nedu:edsn:data:rejectionmeterreadingresponse:1:standard" />
+      <xsd:import schemaLocation="MeterReadingRejectionNotification_1p2.xsd" namespace="urn:nedu:edsn:data:meterreadingrejectionnotification:1:standard" />
+      <xsd:import schemaLocation="MeterReadingRejectionAcknowledgement_1p0.xsd" namespace="urn:nedu:edsn:data:meterreadingrejectionacknowledgement:1:standard" />
+      <xsd:import schemaLocation="MeterReadingRejectionRequest_1p0.xsd" namespace="urn:nedu:edsn:data:meterreadingrejectionrequest:1:standard" />
+      <xsd:import schemaLocation="MeterReadingRejectionResponse_1p2.xsd" namespace="urn:nedu:edsn:data:meterreadingrejectionresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="MeterReadingExchangeNotificationEnvelope">
+    <part name="part1" element="ccma1:MeterReadingExchangeNotificationEnvelope" />
+  </message>
+  <message name="MeterReadingExchangeAcknowledgementEnvelope">
+    <part name="part1" element="ccma2:MeterReadingExchangeAcknowledgementEnvelope" />
+  </message>
+  <message name="MeterReadingExchangeRequestEnvelope">
+    <part name="part1" element="ccma3:MeterReadingExchangeRequestEnvelope" />
+  </message>
+  <message name="MeterReadingExchangeResponseEnvelope">
+    <part name="part1" element="ccma4:MeterReadingExchangeResponseEnvelope" />
+  </message>
+  <message name="RejectionMeterReadingRequestEnvelope">
+    <part name="part1" element="ccma5:RejectionMeterReadingRequestEnvelope" />
+  </message>
+  <message name="RejectionMeterReadingResponseEnvelope">
+    <part name="part1" element="ccma6:RejectionMeterReadingResponseEnvelope" />
+  </message>
+  <message name="MeterReadingRejectionNotificationEnvelope">
+    <part name="part1" element="ccma7:MeterReadingRejectionNotificationEnvelope" />
+  </message>
+  <message name="MeterReadingRejectionAcknowledgementEnvelope">
+    <part name="part1" element="ccma8:MeterReadingRejectionAcknowledgementEnvelope" />
+  </message>
+  <message name="MeterReadingRejectionRequestEnvelope">
+    <part name="part1" element="ccma9:MeterReadingRejectionRequestEnvelope" />
+  </message>
+  <message name="MeterReadingRejectionResponseEnvelope">
+    <part name="part1" element="ccma10:MeterReadingRejectionResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma11:SOAPFault" />
+  </message>
+  <portType name="MeterReadingPortType">
+    <operation name="MeterReadingExchangeNotification">
+      <input message="ws:MeterReadingExchangeNotificationEnvelope" />
+      <output message="ws:MeterReadingExchangeAcknowledgementEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="MeterReadingExchangeRequest">
+      <input message="ws:MeterReadingExchangeRequestEnvelope" />
+      <output message="ws:MeterReadingExchangeResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="RejectionMeterReadingRequest">
+      <input message="ws:RejectionMeterReadingRequestEnvelope" />
+      <output message="ws:RejectionMeterReadingResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="MeterReadingRejectionNotification">
+      <input message="ws:MeterReadingRejectionNotificationEnvelope" />
+      <output message="ws:MeterReadingRejectionAcknowledgementEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="MeterReadingRejectionRequest">
+      <input message="ws:MeterReadingRejectionRequestEnvelope" />
+      <output message="ws:MeterReadingRejectionResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="MeterReadingBinding" type="ws:MeterReadingPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="MeterReadingExchangeNotification">
+      <soap:operation soapAction="urn:MeterReadingExchangeNotification" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="MeterReadingExchangeRequest">
+      <soap:operation soapAction="urn:MeterReadingExchangeRequest" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="RejectionMeterReadingRequest">
+      <soap:operation soapAction="urn:RejectionMeterReadingRequest" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="MeterReadingRejectionNotification">
+      <soap:operation soapAction="urn:MeterReadingRejectionNotification" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="MeterReadingRejectionRequest">
+      <soap:operation soapAction="urn:MeterReadingRejectionRequest" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="MeterReading">
+    <port name="MeterReadingPort" binding="ws:MeterReadingBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderMeterReadingRespondingActivity" />
+    </port>
+  </service>
+</definitions>

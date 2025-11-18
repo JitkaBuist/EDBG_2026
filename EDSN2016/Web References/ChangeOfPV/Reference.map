@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/ChangeOfPV_1p0/ChangeOfPVResponse_1p0.xsd" filename="ChangeOfPVResponse_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/ChangeOfPV_1p0/ChangeOfPV_1.wsdl" filename="ChangeOfPV_1.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/ChangeOfPV_1p0/SOAPFault_1p0.xsd" filename="SOAPFault_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/XSD pre SR2016/ChangeOfPV_1p0/ChangeOfPVRequest_1p0.xsd" filename="ChangeOfPVRequest_1p0.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:searchmeteringpointsmp:1:standard" xmlns:ccma2="urn:nedu:edsn:data:searchmeteringpointsresponse:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:searchmeteringpointsrequest:1:standard" xmlns:ccma3="urn:edsn:edsn:data:soapfault:1:standard" targetNamespace="urn:nedu:edsn:service:searchmeteringpointsmp:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="SearchMeteringPointsRequest_1p2.xsd" namespace="urn:nedu:edsn:data:searchmeteringpointsrequest:1:standard" />
+      <xsd:import schemaLocation="SearchMeteringPointsResponse_1p7.xsd" namespace="urn:nedu:edsn:data:searchmeteringpointsresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="SearchMeteringPointsRequestEnvelope">
+    <part name="part1" element="ccma1:SearchMeteringPointsRequestEnvelope" />
+  </message>
+  <message name="SearchMeteringPointsResponseEnvelope">
+    <part name="part1" element="ccma2:SearchMeteringPointsResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma3:SOAPFault" />
+  </message>
+  <portType name="SearchMeteringPointsMPPortType">
+    <operation name="SearchMeteringPoints">
+      <input message="ws:SearchMeteringPointsRequestEnvelope" />
+      <output message="ws:SearchMeteringPointsResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="SearchMeteringPointsMPBinding" type="ws:SearchMeteringPointsMPPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="SearchMeteringPoints">
+      <soap:operation soapAction="urn:SearchMeteringPoints" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="SearchMeteringPointsMP">
+    <port name="SearchMeteringPointsMPPort" binding="ws:SearchMeteringPointsMPBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderSearchMeteringPointsMPRespondingActivity" />
+    </port>
+  </service>
+</definitions>

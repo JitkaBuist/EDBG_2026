@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:movein:1:standard" xmlns:ccma2="urn:nedu:edsn:data:moveinresponse:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:moveinrequest:1:standard" xmlns:ccma3="urn:edsn:edsn:data:soapfault:1:standard" targetNamespace="urn:nedu:edsn:service:movein:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="MoveInRequest_1p2.xsd" namespace="urn:nedu:edsn:data:moveinrequest:1:standard" />
+      <xsd:import schemaLocation="MoveInResponse_1p0.xsd" namespace="urn:nedu:edsn:data:moveinresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="MoveInRequestEnvelope">
+    <part name="part1" element="ccma1:MoveInRequestEnvelope" />
+  </message>
+  <message name="MoveInResponseEnvelope">
+    <part name="part1" element="ccma2:MoveInResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma3:SOAPFault" />
+  </message>
+  <portType name="MoveInPortType">
+    <operation name="MoveIn">
+      <input message="ws:MoveInRequestEnvelope" />
+      <output message="ws:MoveInResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="MoveInBinding" type="ws:MoveInPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="MoveIn">
+      <soap:operation soapAction="urn:MoveIn" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="MoveIn">
+    <port name="MoveInPort" binding="ws:MoveInBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderMoveInRespondingActivity" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:edsn:edsn:service:p4:1:draft" xmlns:wssutil="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:ccma4="urn:edsn:edsn:data:p4collecteddatabatchresultresponseenvelope:1:standard" xmlns:ccma2="urn:edsn:edsn:data:p4collecteddatabatchresponseenvelope:1:draft" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:edsn:edsn:data:p4collecteddatabatchrequestenvelope:1:draft" xmlns:ccma3="urn:edsn:edsn:data:p4collecteddatabatchresultrequestenvelope:1:draft" targetNamespace="urn:edsn:edsn:service:p4:1:draft" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:UsingPolicy wssutil:Required="true" />
+  <ns0:Policy xmlns:ns0="http://schemas.xmlsoap.org/ws/2004/09/policy" wssutil:Id="p4-policy">
+    <ns1:AsymmetricBinding xmlns:ns1="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+      <ns0:Policy>
+        <ns1:InitiatorToken>
+          <ns0:Policy>
+            <ns1:X509Token ns1:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/IncludeToken/AlwaysToRecipient">
+              <ns0:Policy>
+                <ns1:WssX509V3Token10 />
+              </ns0:Policy>
+            </ns1:X509Token>
+          </ns0:Policy>
+        </ns1:InitiatorToken>
+        <ns1:RecipientToken>
+          <ns0:Policy>
+            <ns1:X509Token ns1:IncludeToken="http://docs.oasis-open.org/ws-sx/ws-trust/200702/ws-securitypolicy/IncludeToken/AlwaysToInitiator">
+              <ns0:Policy>
+                <ns1:WssX509V3Token10 />
+              </ns0:Policy>
+            </ns1:X509Token>
+          </ns0:Policy>
+        </ns1:RecipientToken>
+        <ns1:AlgorithmSuite>
+          <ns0:Policy>
+            <ns1:Basic128 />
+          </ns0:Policy>
+        </ns1:AlgorithmSuite>
+        <ns1:Layout>
+          <ns0:Policy>
+            <ns1:Lax />
+          </ns0:Policy>
+        </ns1:Layout>
+      </ns0:Policy>
+    </ns1:AsymmetricBinding>
+    <ns1:Wss11 xmlns:ns1="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+      <ns0:Policy>
+        <ns1:MustSupportRefKeyIdentifier />
+        <ns1:MustSupportRefIssuerSerial />
+      </ns0:Policy>
+    </ns1:Wss11>
+  </ns0:Policy>
+  <ns0:Policy xmlns:ns0="http://schemas.xmlsoap.org/ws/2004/09/policy" wssutil:Id="Wssp1.2-2007-SignBody.xml">
+    <ns1:SignedParts xmlns:ns1="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
+      <ns1:Body />
+    </ns1:SignedParts>
+  </ns0:Policy>
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="https://p4-test.edsn.nl:443/P4BatchVerzoekMeterstand/P4Port?xsd=1" namespace="urn:edsn:edsn:data:p4collecteddatabatchrequestenvelope:1:draft" />
+      <xsd:import schemaLocation="https://p4-test.edsn.nl:443/P4BatchVerzoekMeterstand/P4Port?xsd=2" namespace="urn:edsn:edsn:data:p4collecteddatabatchresponseenvelope:1:draft" />
+      <xsd:import schemaLocation="https://p4-test.edsn.nl:443/P4BatchVerzoekMeterstand/P4Port?xsd=3" namespace="urn:edsn:edsn:data:p4collecteddatabatchresultrequestenvelope:1:draft" />
+      <xsd:import schemaLocation="https://p4-test.edsn.nl:443/P4BatchVerzoekMeterstand/P4Port?xsd=4" namespace="urn:edsn:edsn:data:p4collecteddatabatchresultresponseenvelope:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="P4CollectedDataBatchRequestEnvelope">
+    <part name="part1" element="ccma1:P4CollectedDataBatchRequestEnvelope" />
+  </message>
+  <message name="P4CollectedDataBatchResponseEnvelope">
+    <part name="part1" element="ccma2:P4CollectedDataBatchResponseEnvelope" />
+  </message>
+  <message name="P4CollectedDataBatchResultRequestEnvelope">
+    <part name="part1" element="ccma3:P4CollectedDataBatchResultRequestEnvelope" />
+  </message>
+  <message name="P4CollectedDataBatchResultResponseEnvelope">
+    <part name="part1" element="ccma4:P4CollectedDataBatchResultResponseEnvelope" />
+  </message>
+  <portType name="P4PortType">
+    <operation name="P4CollectedDataBatchRequestEnvelope">
+      <input message="ws:P4CollectedDataBatchRequestEnvelope" />
+      <output message="ws:P4CollectedDataBatchResponseEnvelope" />
+    </operation>
+    <operation name="P4CollectedDataBatchResultRequestEnvelope">
+      <input message="ws:P4CollectedDataBatchResultRequestEnvelope" />
+      <output message="ws:P4CollectedDataBatchResultResponseEnvelope" />
+    </operation>
+  </portType>
+  <binding name="P4Binding" type="ws:P4PortType">
+    <wsp:PolicyReference URI="#p4-policy" />
+    <wsp:PolicyReference URI="#Wssp1.2-2007-SignBody.xml" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="P4CollectedDataBatchRequestEnvelope">
+      <soap:operation soapAction="urn:P4CollectedDataBatchRequestEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="P4CollectedDataBatchResultRequestEnvelope">
+      <soap:operation soapAction="urn:P4CollectedDataBatchResultRequestEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="P4">
+    <port name="P4Port" binding="ws:P4Binding">
+      <soap:address location="https://p4-test.edsn.nl:443/P4BatchVerzoekMeterstand/P4Port" />
+    </port>
+  </service>
+</definitions>

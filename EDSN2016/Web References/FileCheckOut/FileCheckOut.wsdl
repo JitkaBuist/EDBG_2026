@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns="urn:nl:edsn:service:filecheckout:trans:1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sft="urn:edsn:edsn:data:soapfault:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bm1="urn:nl:edsn:service:filecheckoutrequest:env:1" xmlns:bm2="urn:nl:edsn:service:filecheckoutresponse:env:1" name="FileCheckOut" targetNamespace="urn:nl:edsn:service:filecheckout:trans:1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>version 1.1 dated 19/10/2012</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="urn:nl:edsn:service:filecheckout:trans:1">
+      <xs:import schemaLocation="FileCheckOutRequest_1p0.xsd" namespace="urn:nl:edsn:service:filecheckoutrequest:env:1" />
+      <xs:import schemaLocation="FileCheckOutResponse_1p0.xsd" namespace="urn:nl:edsn:service:filecheckoutresponse:env:1" />
+      <xs:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="RequestMsg">
+    <wsdl:part name="FileCheckOutRequestEnvelope" element="bm1:FileCheckOutRequestEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="PositiveResponseMsg">
+    <wsdl:part name="FileCheckOutResponseEnvelope" element="bm2:FileCheckOutResponseEnvelope" />
+  </wsdl:message>
+  <wsdl:message name="SOAPFault">
+    <wsdl:part name="fault" element="sft:SOAPFault" />
+  </wsdl:message>
+  <wsdl:portType name="FileCheckOut">
+    <wsdl:operation name="FileCheckOutRequest">
+      <wsdl:input message="tns:RequestMsg" />
+      <wsdl:output message="tns:PositiveResponseMsg" />
+      <wsdl:fault name="fault" message="tns:SOAPFault" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FileCheckOutBinding" type="tns:FileCheckOut">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FileCheckOutRequest">
+      <soap:operation soapAction="FileCheckOutRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" parts="FileCheckOutRequestEnvelope" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" parts="FileCheckOutResponseEnvelope" />
+      </wsdl:output>
+      <wsdl:fault name="fault">
+        <soap:fault use="literal" name="fault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FileCheckOutService">
+    <wsdl:port name="FileCheckOutPort" binding="tns:FileCheckOutBinding">
+      <soap:address location="http://localhost:7001/b2b/bulk/generic/FileCheckOut" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

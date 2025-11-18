@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ccma="urn:nl:edsn:service:fileprocessingresponse:env:1" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:nl:edsn:service:fileprocessingresponse:env:1" version="1p0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="FileProcessingResponseEnvelope" type="ccma:FileProcessingResponseEnvelope" />
+  <xsd:complexType name="FileProcessingResponseEnvelope">
+    <xsd:sequence>
+      <xsd:element name="EDSNBusinessDocumentHeader" type="ccma:FileProcessingResponseEnvelope_EDSNBusinessDocumentHeader" />
+      <xsd:element name="FileProcessingResponseContent" type="ccma:FileProcessingResponseEnvelope_FileProcessingResponseContent" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_EDSNBusinessDocumentHeader">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ContentHash" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Hash calculation based on business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ConversationID" type="ccma:FileProcessingResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify all document instances related to a specific business process resulting from an initial service request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="CorrelationID" type="ccma:FileProcessingResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify the document instances related to a specific asynchronous process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CreationTimestamp" type="ccma:FileProcessingResponseEnvelope_DateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when document was created</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Destination" type="ccma:FileProcessingResponseEnvelope_EDSNBusinessDocumentHeader_Destination" />
+      <xsd:element minOccurs="0" name="DocumentID" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to uniquely identify the business document on a functional level</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ExpiresAt" type="ccma:FileProcessingResponseEnvelope_DateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp indication the expiration of this request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="Manifest" type="ccma:FileProcessingResponseEnvelope_EDSNBusinessDocumentHeader_Manifest">
+        <xsd:annotation>
+          <xsd:documentation>Aangave van bijlagen en gerelateerde documenten.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MessageID" type="ccma:FileProcessingResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>UUID voor het uniek identificeren van elke business document instantie. De UUID wordt uitgegeven door de infrastructuur.
+Deze identifier is verplicht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ProcessTypeID" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify the process type where a document instance belongs to</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="RepeatedRequest" type="ccma:FileProcessingResponseEnvelope_Indicator">
+        <xsd:annotation>
+          <xsd:documentation>Correlates message or service with all other messages and service calls related to the same business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Source" type="ccma:FileProcessingResponseEnvelope_EDSNBusinessDocumentHeader_Source">
+        <xsd:annotation>
+          <xsd:documentation>Zender van een bericht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="TestRequest" type="ccma:FileProcessingResponseEnvelope_Indicator">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if this is a test request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_EDSNBusinessDocumentHeader_Destination">
+    <xsd:sequence>
+      <xsd:element name="Receiver" type="ccma:FileProcessingResponseEnvelope_EDSNBusinessDocumentHeader_Destination_Receiver">
+        <xsd:annotation>
+          <xsd:documentation>Ontvanger van een bericht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="Service" type="ccma:FileProcessingResponseEnvelope_EDSNBusinessDocumentHeader_Destination_Service">
+        <xsd:annotation>
+          <xsd:documentation>Service to be consumed</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_EDSNBusinessDocumentHeader_Destination_Receiver">
+    <xsd:annotation>
+      <xsd:documentation>Ontvanger van een bericht.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Authority" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor that qualifies the identifier used to identify the receiving party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ContactTypeIdentifier" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Role in this business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ReceiverID" type="ccma:FileProcessingResponseEnvelope_GLNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor with information to identify this party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_EDSNBusinessDocumentHeader_Destination_Service">
+    <xsd:annotation>
+      <xsd:documentation>Service to be consumed</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="ServiceMethod" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Identifies a process within the service that processes on the business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ServiceName" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Sender description of service to be carried out on the business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_EDSNBusinessDocumentHeader_Manifest">
+    <xsd:annotation>
+      <xsd:documentation>Aangave van bijlagen en gerelateerde documenten.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" name="ManifestItem" type="ccma:FileProcessingResponseEnvelope_EDSNBusinessDocumentHeader_Manifest_ManifestItem">
+        <xsd:annotation>
+          <xsd:documentation>Bevat informatie over het gereferenceerde item.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="NumberofItems" type="ccma:FileProcessingResponseEnvelope_Numeric">
+        <xsd:annotation>
+          <xsd:documentation>Number of associated items</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_EDSNBusinessDocumentHeader_Manifest_ManifestItem">
+    <xsd:annotation>
+      <xsd:documentation>Bevat informatie over het gereferenceerde item.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Description" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Text description of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="LanguageCode" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>ISO 639 language code of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MimeTypeQualifierCode" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>MIME Media Types Code describing the content of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="UniformResourceIdentifier" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>URI of the item
+Identifier voor locatie en naam van een attachment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_EDSNBusinessDocumentHeader_Source">
+    <xsd:annotation>
+      <xsd:documentation>Zender van een bericht.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="Authority" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor that qualifies the identifier used to identify the sending party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ContactTypeIdentifier" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Role in this business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SenderID" type="ccma:FileProcessingResponseEnvelope_GLNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor with information to identify this party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_FileProcessingResponseContent">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="EDSN_SimpleRejection" type="ccma:FileProcessingResponseEnvelope_FileProcessingResponseContent_EDSN_SimpleRejection" />
+      <xsd:element minOccurs="0" name="FileProcessingResponse_EDSNFileDetails" type="ccma:FileProcessingResponseEnvelope_FileProcessingResponseContent_FileProcessingResponse_EDSNFileDetails">
+        <xsd:annotation>
+          <xsd:documentation>Bestandsgegevens.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_FileProcessingResponseContent_EDSN_SimpleRejection">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Rejections" type="ccma:FileProcessingResponseEnvelope_FileProcessingResponseContent_EDSN_SimpleRejection_Rejections">
+        <xsd:annotation>
+          <xsd:documentation>Afwijzingen.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_FileProcessingResponseContent_EDSN_SimpleRejection_Rejections">
+    <xsd:annotation>
+      <xsd:documentation>Afwijzingen.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="RejectionCode">
+        <xsd:annotation>
+          <xsd:documentation>Code afwijzing.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="ccma:FileProcessingResponseEnvelope_Code">
+            <xsd:maxLength value="5" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="RejectionText">
+        <xsd:annotation>
+          <xsd:documentation>Tekst afwijzing.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="ccma:FileProcessingResponseEnvelope_Text">
+            <xsd:maxLength value="256" />
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_FileProcessingResponseContent_FileProcessingResponse_EDSNFileDetails">
+    <xsd:annotation>
+      <xsd:documentation>Bestandsgegevens.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="CheckOutDate_EDSNFileDetails" type="ccma:FileProcessingResponseEnvelope_FileProcessingResponseContent_FileProcessingResponse_EDSNFileDetails_CheckOutDate_EDSNFileDetails">
+        <xsd:annotation>
+          <xsd:documentation>Datum/tijd afmelden bestand.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FileID" type="ccma:FileProcessingResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>Unieke identificatie bestand.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FileSize" type="ccma:FileProcessingResponseEnvelope_Numeric">
+        <xsd:annotation>
+          <xsd:documentation>Bestandsgrootte, in bytes. Max. xxx karakters.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="FileType" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Bestandstype voor bestandsuitwisseling.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Group" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Groep voor bestandsuitwisseling.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ReceivingEntity_EDSNFileDetails" type="ccma:FileProcessingResponseEnvelope_FileProcessingResponseContent_FileProcessingResponse_EDSNFileDetails_ReceivingEntity_EDSNFileDetails">
+        <xsd:annotation>
+          <xsd:documentation>Naam en EAN codes ontvangende partij.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SendingEntity_EDSNFileDetails" type="ccma:FileProcessingResponseEnvelope_FileProcessingResponseContent_FileProcessingResponse_EDSNFileDetails_SendingEntity_EDSNFileDetails">
+        <xsd:annotation>
+          <xsd:documentation>Naam en EAN codes zendende partij.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Status" type="ccma:FileProcessingResponseEnvelope_Code">
+        <xsd:annotation>
+          <xsd:documentation>Status van bestand:
+Aangeboden
+Teruggetrokken
+Opgehaald
+Afgemeld
+Fout</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="UploadDate_EDSNFileDetails" type="ccma:FileProcessingResponseEnvelope_FileProcessingResponseContent_FileProcessingResponse_EDSNFileDetails_UploadDate_EDSNFileDetails">
+        <xsd:annotation>
+          <xsd:documentation>Datum/tijd upload bestand.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_FileProcessingResponseContent_FileProcessingResponse_EDSNFileDetails_CheckOutDate_EDSNFileDetails">
+    <xsd:annotation>
+      <xsd:documentation>Datum/tijd afmelden bestand.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DateTime" type="ccma:FileProcessingResponseEnvelope_DateTime">
+        <xsd:annotation>
+          <xsd:documentation>Datum/tijd.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_FileProcessingResponseContent_FileProcessingResponse_EDSNFileDetails_ReceivingEntity_EDSNFileDetails">
+    <xsd:annotation>
+      <xsd:documentation>Naam en EAN codes ontvangende partij.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="OrganisationID" type="ccma:FileProcessingResponseEnvelope_GLNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>EAN code organisatie.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="OrganisationName" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Naam organisatie.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PartyID" type="ccma:FileProcessingResponseEnvelope_GLNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>EAN code marktpartij.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PartyName" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Naam marktpartij.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_FileProcessingResponseContent_FileProcessingResponse_EDSNFileDetails_SendingEntity_EDSNFileDetails">
+    <xsd:annotation>
+      <xsd:documentation>Naam en EAN codes zendende partij.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="OrganisationID" type="ccma:FileProcessingResponseEnvelope_GLNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>EAN code organisatie.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="OrganisationName" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Naam organisatie.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PartyID" type="ccma:FileProcessingResponseEnvelope_GLNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>EAN code marktpartij.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PartyName" type="ccma:FileProcessingResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Naam marktpartij.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="FileProcessingResponseEnvelope_FileProcessingResponseContent_FileProcessingResponse_EDSNFileDetails_UploadDate_EDSNFileDetails">
+    <xsd:annotation>
+      <xsd:documentation>Datum/tijd upload bestand.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="DateTime" type="ccma:FileProcessingResponseEnvelope_DateTime">
+        <xsd:annotation>
+          <xsd:documentation>Datum/tijd.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="FileProcessingResponseEnvelope_Code">
+    <xsd:annotation>
+      <xsd:documentation>Code (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="FileProcessingResponseEnvelope_DateTime">
+    <xsd:annotation>
+      <xsd:documentation>Datum/tijd (dateTime).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:dateTime" />
+  </xsd:simpleType>
+  <xsd:simpleType name="FileProcessingResponseEnvelope_GLNEANCode">
+    <xsd:annotation>
+      <xsd:documentation>Global Location Number (GLN) conform de Europese Artikel Nummering.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="13" />
+      <xsd:pattern value="[0-9]{13}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="FileProcessingResponseEnvelope_Identifier">
+    <xsd:annotation>
+      <xsd:documentation>Identifier (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="FileProcessingResponseEnvelope_Indicator">
+    <xsd:annotation>
+      <xsd:documentation>Indicator (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:boolean" />
+  </xsd:simpleType>
+  <xsd:simpleType name="FileProcessingResponseEnvelope_Numeric">
+    <xsd:annotation>
+      <xsd:documentation>Nummer (getal).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal" />
+  </xsd:simpleType>
+  <xsd:simpleType name="FileProcessingResponseEnvelope_Text">
+    <xsd:annotation>
+      <xsd:documentation>Tekst (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+</xsd:schema>

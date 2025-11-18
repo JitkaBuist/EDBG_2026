@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ws="urn:nedu:edsn:service:changeofallocationmethod:1:standard" xmlns:ccma2="urn:nedu:edsn:data:changeofallocationmethodresponse:1:standard" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma1="urn:nedu:edsn:data:changeofallocationmethodrequest:1:standard" xmlns:ccma3="urn:edsn:edsn:data:soapfault:1:standard" targetNamespace="urn:nedu:edsn:service:changeofallocationmethod:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="ChangeOfAllocationMethodRequest_1p0.xsd" namespace="urn:nedu:edsn:data:changeofallocationmethodrequest:1:standard" />
+      <xsd:import schemaLocation="ChangeOfAllocationMethodResponse_1p0.xsd" namespace="urn:nedu:edsn:data:changeofallocationmethodresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="ChangeOfAllocationMethodRequestEnvelope">
+    <part name="part1" element="ccma1:ChangeOfAllocationMethodRequestEnvelope" />
+  </message>
+  <message name="ChangeOfAllocationMethodResponseEnvelope">
+    <part name="part1" element="ccma2:ChangeOfAllocationMethodResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma3:SOAPFault" />
+  </message>
+  <portType name="ChangeOfAllocationMethodPortType">
+    <operation name="ChangeOfAllocationMethod">
+      <input message="ws:ChangeOfAllocationMethodRequestEnvelope" />
+      <output message="ws:ChangeOfAllocationMethodResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="ChangeOfAllocationMethodBinding" type="ws:ChangeOfAllocationMethodPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ChangeOfAllocationMethod">
+      <soap:operation soapAction="urn:ChangeOfAllocationMethod" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="ChangeOfAllocationMethod">
+    <port name="ChangeOfAllocationMethodPort" binding="ws:ChangeOfAllocationMethodBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderChangeOfAllocationMethodRespondingActivity" />
+    </port>
+  </service>
+</definitions>

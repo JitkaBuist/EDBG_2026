@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/MoveIn_1p2/MoveInRequest_1p2.xsd" filename="MoveInRequest_1p2.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/MoveIn_1p2/SOAPFault_1p0.xsd" filename="SOAPFault_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/MoveIn_1p2/MoveInResponse_1p0.xsd" filename="MoveInResponse_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/OneDrive/OneDrive - Mink I.T/Documenten/EDBG/SR2020/Berichtdefinities/MoveIn_1p2/MoveIn_1.wsdl" filename="MoveIn_1.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ccma="urn:edsn:edsn:data:p4collecteddatabatchresultresponseenvelope:1:standard" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:edsn:edsn:data:p4collecteddatabatchresultresponseenvelope:1:standard" version="1p2" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="P4CollectedDataBatchResultResponseEnvelope" type="ccma:P4CollectedDataBatchResultResponseEnvelope" />
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope">
+    <xsd:sequence>
+      <xsd:element name="EDSNBusinessDocumentHeader" type="ccma:P4CollectedDataBatchResultResponseEnvelope_EDSNBusinessDocumentHeader" />
+      <xsd:element name="P4Content" type="ccma:P4CollectedDataBatchResultResponseEnvelope_P4Content" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope_EDSNBusinessDocumentHeader">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ContentHash" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Hash calculation based on business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ConversationID" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify all document instances related to a specific business process resulting from an initial service request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="CorrelationID" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify the document instances related to a specific asynchronous process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CreationTimestamp" type="ccma:P4CollectedDataBatchResultResponseEnvelope_DateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp when document was created</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="DocumentID" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to uniquely identify the business document on a functional level</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ExpiresAt" type="ccma:P4CollectedDataBatchResultResponseEnvelope_DateTime">
+        <xsd:annotation>
+          <xsd:documentation>Timestamp indication the expiration of this request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MessageID" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>UUID voor het uniek identificeren van elke business document instantie. De UUID wordt uitgegeven door de infrastructuur.
+Deze identifier is verplicht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ProcessTypeID" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>This identifier is used to identify the process type where a document instance belongs to</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="RepeatedRequest" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>Correlates message or service with all other messages and service calls related to the same business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="TestRequest" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Indicator">
+        <xsd:annotation>
+          <xsd:documentation>Indicates if this is a test request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Destination" type="ccma:P4CollectedDataBatchResultResponseEnvelope_EDSNBusinessDocumentHeader_Destination" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Manifest" type="ccma:P4CollectedDataBatchResultResponseEnvelope_EDSNBusinessDocumentHeader_Manifest">
+        <xsd:annotation>
+          <xsd:documentation>Aangave van bijlagen en gerelateerde documenten.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Source" type="ccma:P4CollectedDataBatchResultResponseEnvelope_EDSNBusinessDocumentHeader_Source">
+        <xsd:annotation>
+          <xsd:documentation>Zender van een bericht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope_EDSNBusinessDocumentHeader_Destination">
+    <xsd:sequence>
+      <xsd:element name="Receiver" type="ccma:P4CollectedDataBatchResultResponseEnvelope_EDSNBusinessDocumentHeader_Destination_Receiver">
+        <xsd:annotation>
+          <xsd:documentation>Ontvanger van een bericht.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Service" type="ccma:P4CollectedDataBatchResultResponseEnvelope_EDSNBusinessDocumentHeader_Destination_Service">
+        <xsd:annotation>
+          <xsd:documentation>Service to be consumed</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope_EDSNBusinessDocumentHeader_Destination_Receiver">
+    <xsd:annotation>
+      <xsd:documentation>Ontvanger van een bericht.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Authority" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor that qualifies the identifier used to identify the receiving party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ContactTypeIdentifier" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Role in this business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ReceiverID" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor with information to identify this party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope_EDSNBusinessDocumentHeader_Destination_Service">
+    <xsd:annotation>
+      <xsd:documentation>Service to be consumed</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ServiceMethod" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Identifies a process within the service that processes on the business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ServiceName" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Sender description of service to be carried out on the business document</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope_EDSNBusinessDocumentHeader_Manifest">
+    <xsd:annotation>
+      <xsd:documentation>Aangave van bijlagen en gerelateerde documenten.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="NumberofItems" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Numeric">
+        <xsd:annotation>
+          <xsd:documentation>Number of associated items</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="ManifestItem" type="ccma:P4CollectedDataBatchResultResponseEnvelope_EDSNBusinessDocumentHeader_Manifest_ManifestItem">
+        <xsd:annotation>
+          <xsd:documentation>Bevat informatie over het gereferenceerde item.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope_EDSNBusinessDocumentHeader_Manifest_ManifestItem">
+    <xsd:annotation>
+      <xsd:documentation>Bevat informatie over het gereferenceerde item.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Description" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Text description of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="LanguageCode" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>ISO 639 language code of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="MimeTypeQualifierCode" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>MIME Media Types Code describing the content of the item</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="UniformResourceIdentifier" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>URI of the item
+Identifier voor locatie en naam van een attachment</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope_EDSNBusinessDocumentHeader_Source">
+    <xsd:annotation>
+      <xsd:documentation>Zender van een bericht.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Authority" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor that qualifies the identifier used to identify the sending party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ContactTypeIdentifier" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Role in this business process</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="SenderID" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Identifier">
+        <xsd:annotation>
+          <xsd:documentation>Descriptor with information to identify this party</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope_P4Content">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="P4MeteringPoint" type="ccma:P4CollectedDataBatchResultResponseEnvelope_P4Content_P4MeteringPoint" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope_P4Content_P4MeteringPoint">
+    <xsd:sequence>
+      <xsd:element name="EANID" type="ccma:P4CollectedDataBatchResultResponseEnvelope_GSRNEANCode">
+        <xsd:annotation>
+          <xsd:documentation>Uniek identificatienummer conform de Europese Artikel Nummering voor de aansluiting (LDT).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="ExternalReference" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="QueryDate" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Date" />
+      <xsd:element name="QueryReason" type="ccma:P4CollectedDataBatchResultResponseEnvelope_QueryReasonTypeCode" />
+      <xsd:choice>
+        <xsd:element minOccurs="1" maxOccurs="unbounded" name="EDSN_SimpleRejection" type="ccma:P4CollectedDataBatchResultResponseEnvelope_P4Content_P4MeteringPoint_EDSN_SimpleRejection">
+          <xsd:annotation>
+            <xsd:documentation>Afwijzing met alleen afwijzingscode en -tekst.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element minOccurs="1" maxOccurs="unbounded" name="P4EnergyMeter" type="ccma:P4CollectedDataBatchResultResponseEnvelope_P4Content_P4MeteringPoint_P4EnergyMeter" />
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope_P4Content_P4MeteringPoint_EDSN_SimpleRejection">
+    <xsd:annotation>
+      <xsd:documentation>Afwijzing met alleen afwijzingscode en -tekst.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="SimpleRejection" type="ccma:P4CollectedDataBatchResultResponseEnvelope_SimpleRejectionType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope_P4Content_P4MeteringPoint_P4EnergyMeter">
+    <xsd:sequence>
+      <xsd:element name="ID" type="ccma:P4CollectedDataBatchResultResponseEnvelope_EnergyMeterIDType">
+        <xsd:annotation>
+          <xsd:documentation>M.101 Meternummer (LDT).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="4" name="P4Register" type="ccma:P4CollectedDataBatchResultResponseEnvelope_P4Content_P4MeteringPoint_P4EnergyMeter_P4Register" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope_P4Content_P4MeteringPoint_P4EnergyMeter_P4Register">
+    <xsd:sequence>
+      <xsd:element name="ID" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Identifier" />
+      <xsd:element name="MeasureUnit" type="ccma:P4CollectedDataBatchResultResponseEnvelope_MeasureUnitCode" />
+      <xsd:element minOccurs="1" maxOccurs="101" name="P4Reading" type="ccma:P4CollectedDataBatchResultResponseEnvelope_P4Content_P4MeteringPoint_P4EnergyMeter_P4Register_P4Reading" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope_P4Content_P4MeteringPoint_P4EnergyMeter_P4Register_P4Reading">
+    <xsd:sequence>
+      <xsd:element name="Reading" type="ccma:P4CollectedDataBatchResultResponseEnvelope_ReadingType" />
+      <xsd:element name="ReadingDateTime" type="ccma:P4CollectedDataBatchResultResponseEnvelope_DateTime" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="P4CollectedDataBatchResultResponseEnvelope_Code">
+    <xsd:annotation>
+      <xsd:documentation>Code (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="P4CollectedDataBatchResultResponseEnvelope_Date">
+    <xsd:annotation>
+      <xsd:documentation>Datum (date).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:date" />
+  </xsd:simpleType>
+  <xsd:simpleType name="P4CollectedDataBatchResultResponseEnvelope_DateTime">
+    <xsd:annotation>
+      <xsd:documentation>Datum/tijd (dateTime).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:dateTime" />
+  </xsd:simpleType>
+  <xsd:simpleType name="P4CollectedDataBatchResultResponseEnvelope_EnergyMeterIDType">
+    <xsd:annotation>
+      <xsd:documentation>[M.101] Meternummer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="70" />
+      <xsd:minLength value="1" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="P4CollectedDataBatchResultResponseEnvelope_GSRNEANCode">
+    <xsd:annotation>
+      <xsd:documentation>Global Service Relation Number (GSRN) conform de Europese Artikel Nummering.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:length value="18" />
+      <xsd:pattern value="[0-9]{18}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="P4CollectedDataBatchResultResponseEnvelope_Identifier">
+    <xsd:annotation>
+      <xsd:documentation>Identifier (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="P4CollectedDataBatchResultResponseEnvelope_Indicator">
+    <xsd:annotation>
+      <xsd:documentation>Indicator (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="P4CollectedDataBatchResultResponseEnvelope_Numeric">
+    <xsd:annotation>
+      <xsd:documentation>Nummer (getal).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal" />
+  </xsd:simpleType>
+  <xsd:simpleType name="P4CollectedDataBatchResultResponseEnvelope_ReadingType">
+    <xsd:annotation>
+      <xsd:documentation>Afleestype.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:decimal" />
+  </xsd:simpleType>
+  <xsd:complexType name="P4CollectedDataBatchResultResponseEnvelope_SimpleRejectionType">
+    <xsd:annotation>
+      <xsd:documentation>Vereenvoudigd datatype voor afwijzingen.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="RejectionCode" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Code">
+        <xsd:annotation>
+          <xsd:documentation>Afwijsreden code</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="RejectionText" type="ccma:P4CollectedDataBatchResultResponseEnvelope_Text">
+        <xsd:annotation>
+          <xsd:documentation>Afwijsreden tekst</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="P4CollectedDataBatchResultResponseEnvelope_Text">
+    <xsd:annotation>
+      <xsd:documentation>Tekst (string).</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+  <xsd:simpleType name="P4CollectedDataBatchResultResponseEnvelope_MeasureUnitCode">
+    <xsd:annotation>
+      <xsd:documentation>Code meeteenheid.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="KVR">
+        <xsd:annotation>
+          <xsd:documentation>kVAR
+De voltampère reactief (var) is de eenheid van reactief vermogen (P&lt;sub&gt;r&lt;/sub&gt;) ook wel bekend als Blind vermogen (P&lt;sub&gt;bl&lt;/sub&gt;)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="KWH">
+        <xsd:annotation>
+          <xsd:documentation>kilowatt hour &lt;font color="#0f0f0f"&gt;(kilowattuur kWh)&lt;/font&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="KWT">
+        <xsd:annotation>
+          <xsd:documentation>&lt;font color="#0f0f0f"&gt;kilowatt (kW)&lt;/font&gt;</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="M3N">
+        <xsd:annotation>
+          <xsd:documentation>normal cubic metre</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MTQ">
+        <xsd:annotation>
+          <xsd:documentation>cubic metre</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="WH">
+        <xsd:annotation>
+          <xsd:documentation>watt hour</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DM3">
+        <xsd:annotation>
+          <xsd:documentation>cubic decimetre</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="MJ">
+        <xsd:annotation>
+          <xsd:documentation>megajoule</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="M3N3517">
+        <xsd:annotation>
+          <xsd:documentation>Groningen-gas equivalent is m3(n;35,17)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="M3N3517HR">
+        <xsd:annotation>
+          <xsd:documentation>Gasafname in m3(n;35,17)/uur</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="P4CollectedDataBatchResultResponseEnvelope_QueryReasonTypeCode">
+    <xsd:annotation>
+      <xsd:documentation>Code reden verstrekking.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="DAY" />
+      <xsd:enumeration value="INT" />
+      <xsd:enumeration value="RCY" />
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

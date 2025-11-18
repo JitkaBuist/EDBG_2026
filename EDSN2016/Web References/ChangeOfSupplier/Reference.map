@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/Projectdocumentatie-Sectorrelease-2016-1-van-4/Berichtdefinities/009.1.19 - Berichtdefinitie ChangeOfSupplier_1.1 (ALV NEDU 20160309-009.1.19)/ChangeOfSupplier_1.wsdl" filename="ChangeOfSupplier_1.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/Projectdocumentatie-Sectorrelease-2016-1-van-4/Berichtdefinities/009.1.19 - Berichtdefinitie ChangeOfSupplier_1.1 (ALV NEDU 20160309-009.1.19)/ChangeOfSupplierResponse_1p0.xsd" filename="ChangeOfSupplierResponse_1p0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/Projectdocumentatie-Sectorrelease-2016-1-van-4/Berichtdefinities/009.1.19 - Berichtdefinitie ChangeOfSupplier_1.1 (ALV NEDU 20160309-009.1.19)/ChangeOfSupplierRequest_1p1.xsd" filename="ChangeOfSupplierRequest_1p1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="file:///C:/Users/Pieter/Documents/EDBG/SR2016/Projectdocumentatie-Sectorrelease-2016-1-van-4/Berichtdefinities/009.1.19 - Berichtdefinitie ChangeOfSupplier_1.1 (ALV NEDU 20160309-009.1.19)/SOAPFault_1p0.xsd" filename="SOAPFault_1p0.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

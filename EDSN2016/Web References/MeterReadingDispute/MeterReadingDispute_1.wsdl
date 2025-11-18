@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:ccma3="urn:nedu:edsn:data:meterreadingdisputerequest:1:standard" xmlns:ccma2="urn:nedu:edsn:data:meterreadingdisputeacknowledgement:1:standard" xmlns:ccma9="urn:edsn:edsn:data:soapfault:1:standard" xmlns:ccma8="urn:nedu:edsn:data:meterreadingdisputeresultresponse:1:standard" xmlns:ws="urn:nedu:edsn:service:meterreadingdispute:1:standard" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ccma5="urn:nedu:edsn:data:meterreadingdisputeresultnotification:1:standard" xmlns:ccma4="urn:nedu:edsn:data:meterreadingdisputeresponse:1:standard" xmlns:ccma7="urn:nedu:edsn:data:meterreadingdisputeresultrequest:1:standard" xmlns:ccma6="urn:nedu:edsn:data:meterreadingdisputeresultacknowledgement:1:standard" xmlns:ccma1="urn:nedu:edsn:data:meterreadingdisputenotification:1:standard" targetNamespace="urn:nedu:edsn:service:meterreadingdispute:1:standard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="MeterReadingDisputeNotification_1p1.xsd" namespace="urn:nedu:edsn:data:meterreadingdisputenotification:1:standard" />
+      <xsd:import schemaLocation="MeterReadingDisputeAcknowledgement_1p0.xsd" namespace="urn:nedu:edsn:data:meterreadingdisputeacknowledgement:1:standard" />
+      <xsd:import schemaLocation="MeterReadingDisputeRequest_1p0.xsd" namespace="urn:nedu:edsn:data:meterreadingdisputerequest:1:standard" />
+      <xsd:import schemaLocation="MeterReadingDisputeResponse_1p1.xsd" namespace="urn:nedu:edsn:data:meterreadingdisputeresponse:1:standard" />
+      <xsd:import schemaLocation="MeterReadingDisputeResultNotification_1p0.xsd" namespace="urn:nedu:edsn:data:meterreadingdisputeresultnotification:1:standard" />
+      <xsd:import schemaLocation="MeterReadingDisputeResultAcknowledgement_1p0.xsd" namespace="urn:nedu:edsn:data:meterreadingdisputeresultacknowledgement:1:standard" />
+      <xsd:import schemaLocation="MeterReadingDisputeResultRequest_1p0.xsd" namespace="urn:nedu:edsn:data:meterreadingdisputeresultrequest:1:standard" />
+      <xsd:import schemaLocation="MeterReadingDisputeResultResponse_1p0.xsd" namespace="urn:nedu:edsn:data:meterreadingdisputeresultresponse:1:standard" />
+      <xsd:import schemaLocation="SOAPFault_1p0.xsd" namespace="urn:edsn:edsn:data:soapfault:1:standard" />
+    </xsd:schema>
+  </types>
+  <message name="MeterReadingDisputeNotificationEnvelope">
+    <part name="part1" element="ccma1:MeterReadingDisputeNotificationEnvelope" />
+  </message>
+  <message name="MeterReadingDisputeAcknowledgementEnvelope">
+    <part name="part1" element="ccma2:MeterReadingDisputeAcknowledgementEnvelope" />
+  </message>
+  <message name="MeterReadingDisputeRequestEnvelope">
+    <part name="part1" element="ccma3:MeterReadingDisputeRequestEnvelope" />
+  </message>
+  <message name="MeterReadingDisputeResponseEnvelope">
+    <part name="part1" element="ccma4:MeterReadingDisputeResponseEnvelope" />
+  </message>
+  <message name="MeterReadingDisputeResultNotificationEnvelope">
+    <part name="part1" element="ccma5:MeterReadingDisputeResultNotificationEnvelope" />
+  </message>
+  <message name="MeterReadingDisputeResultAcknowledgementEnvelope">
+    <part name="part1" element="ccma6:MeterReadingDisputeResultAcknowledgementEnvelope" />
+  </message>
+  <message name="MeterReadingDisputeResultRequestEnvelope">
+    <part name="part1" element="ccma7:MeterReadingDisputeResultRequestEnvelope" />
+  </message>
+  <message name="MeterReadingDisputeResultResponseEnvelope">
+    <part name="part1" element="ccma8:MeterReadingDisputeResultResponseEnvelope" />
+  </message>
+  <message name="SOAPFault">
+    <part name="part1" element="ccma9:SOAPFault" />
+  </message>
+  <portType name="MeterReadingDisputePortType">
+    <operation name="MeterReadingDisputeNotification">
+      <input message="ws:MeterReadingDisputeNotificationEnvelope" />
+      <output message="ws:MeterReadingDisputeAcknowledgementEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="MeterReadingDisputeRequest">
+      <input message="ws:MeterReadingDisputeRequestEnvelope" />
+      <output message="ws:MeterReadingDisputeResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="MeterReadingDisputeResultNotification">
+      <input message="ws:MeterReadingDisputeResultNotificationEnvelope" />
+      <output message="ws:MeterReadingDisputeResultAcknowledgementEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+    <operation name="MeterReadingDisputeResultRequest">
+      <input message="ws:MeterReadingDisputeResultRequestEnvelope" />
+      <output message="ws:MeterReadingDisputeResultResponseEnvelope" />
+      <fault name="SOAPFault" message="ws:SOAPFault" />
+    </operation>
+  </portType>
+  <binding name="MeterReadingDisputeBinding" type="ws:MeterReadingDisputePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="MeterReadingDisputeNotification">
+      <soap:operation soapAction="urn:MeterReadingDisputeNotificationEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="MeterReadingDisputeRequest">
+      <soap:operation soapAction="urn:MeterReadingDisputeRequestEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="MeterReadingDisputeResultNotification">
+      <soap:operation soapAction="urn:MeterReadingDisputeResultNotificationEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+    <operation name="MeterReadingDisputeResultRequest">
+      <soap:operation soapAction="urn:MeterReadingDisputeResultRequestEnvelope" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="SOAPFault">
+        <soap:fault use="literal" name="SOAPFault" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="MeterReadingDispute">
+    <port name="MeterReadingDisputePort" binding="ws:MeterReadingDisputeBinding">
+      <soap:address location="http://localhost:9000/b2b/synchroon/ResponderMeterReadingDisputeRespondingActivity" />
+    </port>
+  </service>
+</definitions>
