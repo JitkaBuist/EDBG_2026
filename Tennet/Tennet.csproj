@@ -365,9 +365,9 @@
       <Project>{10bc5cd2-f88a-4820-b5ce-589907116863}</Project>
       <Name>Car</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EDMij.DataAccess_2016\Energie.DataAccess.csproj">
+    <ProjectReference Include="..\DataAccess_2026\DataAccess.csproj">
       <Project>{911a2efb-1910-43cc-90a8-f9fb1f59ba31}</Project>
-      <Name>Energie.DataAccess</Name>
+      <Name>DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

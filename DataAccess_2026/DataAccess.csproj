@@ -88,22 +88,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations.cs" />
-    <Compile Include="MessagesDataSet.cs">
-      <DependentUpon>MessagesDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MessagesDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MessagesDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="EDMIJDBDataSet.cs">
-      <DependentUpon>EDMIJDBDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="EDMIJDBDataSet.Designer.cs">
-      <DependentUpon>EDMIJDBDataSet.xsd</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <DependentUpon>Settings.settings</DependentUpon>
@@ -116,28 +100,6 @@
   <ItemGroup>
     <None Include="app.config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="MessagesDataSet.xsc">
-      <DependentUpon>MessagesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="MessagesDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MessagesDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="MessagesDataSet.xss">
-      <DependentUpon>MessagesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="EDMIJDBDataSet.xsc">
-      <DependentUpon>EDMIJDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="EDMIJDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>EDMIJDBDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="EDMIJDBDataSet.xss">
-      <DependentUpon>EDMIJDBDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

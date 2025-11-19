@@ -73,13 +73,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataSetHelper_2016\Energie.DataTableHelper.csproj">
-      <Project>{c9611f82-7774-44e6-b82e-55cf15f13266}</Project>
-      <Name>Energie.DataTableHelper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EDMij.DataAccess_2016\Energie.DataAccess.csproj">
+    <ProjectReference Include="..\DataAccess_2026\DataAccess.csproj">
       <Project>{911a2efb-1910-43cc-90a8-f9fb1f59ba31}</Project>
-      <Name>Energie.DataAccess</Name>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataSetHelper_2016\DataTableHelper.csproj">
+      <Project>{c9611f82-7774-44e6-b82e-55cf15f13266}</Project>
+      <Name>DataTableHelper</Name>
     </ProjectReference>
     <ProjectReference Include="..\EDSN2026\EDSN2026.csproj">
       <Project>{500ca4bd-1f45-4b5b-9d15-8d1f44f40d68}</Project>

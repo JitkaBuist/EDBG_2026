@@ -11,7 +11,7 @@ using System.Xml;
 using System.Windows.Forms;
 using Energie.DataTableHelper;
 using nl.Energie.VerwerkCar;
-using Energie.DataAccess.EnergieDBDataSetTableAdapters;
+// using Energie.DataAccess.EnergieDBDataSetTableAdapters;
 
 namespace Energie.Car
 {

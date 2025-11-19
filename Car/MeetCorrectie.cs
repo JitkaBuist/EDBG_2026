@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
-using Energie.DataAccess.DataSet1TableAdapters;
+//using Energie.DataAccess.DataSet1TableAdapters;
 using System.Resources;
 using nl.Energie.EDSN;
 using System.Runtime.CompilerServices;

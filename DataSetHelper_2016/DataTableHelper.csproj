@@ -138,9 +138,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EDMij.DataAccess_2016\Energie.DataAccess.csproj">
+    <ProjectReference Include="..\DataAccess_2026\DataAccess.csproj">
       <Project>{911a2efb-1910-43cc-90a8-f9fb1f59ba31}</Project>
-      <Name>Energie.DataAccess</Name>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EDSN2026\EDSN2026.csproj">
+      <Project>{500ca4bd-1f45-4b5b-9d15-8d1f44f40d68}</Project>
+      <Name>EDSN2026</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
