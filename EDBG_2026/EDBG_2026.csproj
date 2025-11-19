@@ -563,7 +563,7 @@
       <Project>{911a2efb-1910-43cc-90a8-f9fb1f59ba31}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DataSetHelper_2016\DataTableHelper.csproj">
+    <ProjectReference Include="..\DataSetHelper\DataTableHelper.csproj">
       <Project>{c9611f82-7774-44e6-b82e-55cf15f13266}</Project>
       <Name>DataTableHelper</Name>
     </ProjectReference>

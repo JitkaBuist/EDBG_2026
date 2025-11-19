@@ -1,7 +1,7 @@
 <Solution>
   <Project Path="Car/Car.csproj" Id="10bc5cd2-f88a-4820-b5ce-589907116863" />
   <Project Path="DataAccess_2026/DataAccess.csproj" Id="911a2efb-1910-43cc-90a8-f9fb1f59ba31" />
-  <Project Path="DataSetHelper_2016/DataTableHelper.csproj" Id="c9611f82-7774-44e6-b82e-55cf15f13266" />
+  <Project Path="DataSetHelper/DataTableHelper.csproj" Id="c9611f82-7774-44e6-b82e-55cf15f13266" />
   <Project Path="EDBG_2026/EDBG_2026.csproj" Id="179b0607-282e-4235-851f-c88410b90a2a" />
   <Project Path="EDSN2026/EDSN2026.csproj" Id="500ca4bd-1f45-4b5b-9d15-8d1f44f40d68" />
   <Project Path="EDSNBatch/EDSNBatch.csproj" Id="8e2bfea0-1734-4613-9bac-2a6242e57ac0" />
