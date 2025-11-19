@@ -135,7 +135,7 @@ public partial class RegisterCSP : System.Web.UI.Page
             // Validaties (minimaal):
             if (string.IsNullOrEmpty(ean))
             {
-                // TODO: toon nette melding aan gebruiker
+                // TODO: toon nette melding aan gebruikers
                 return;
             }
 
