@@ -3,7 +3,7 @@
   <Project Path="DataSetHelper_2016/Energie.DataTableHelper.csproj" Id="c9611f82-7774-44e6-b82e-55cf15f13266" />
   <Project Path="EDBG_2026/EDBG_2026.csproj" Id="179b0607-282e-4235-851f-c88410b90a2a" />
   <Project Path="EDMij.DataAccess_2016/Energie.DataAccess.csproj" Id="911a2efb-1910-43cc-90a8-f9fb1f59ba31" />
-  <Project Path="EDSN2016/EDSN2016.csproj" Id="500ca4bd-1f45-4b5b-9d15-8d1f44f40d68" />
+  <Project Path="EDSN2026/EDSN2026.csproj" Id="500ca4bd-1f45-4b5b-9d15-8d1f44f40d68" />
   <Project Path="EDSNBatch/EDSNBatch.csproj" Id="8e2bfea0-1734-4613-9bac-2a6242e57ac0" />
   <Project Path="SwitchberichtenSR2016/Energie.Switchbericht.csproj" Id="5a9bcbe5-bc84-4482-bf4d-76b9c8511060" />
   <Project Path="Tennet/Tennet.csproj" Id="41969900-177e-4c19-a876-b0cc43599968" />

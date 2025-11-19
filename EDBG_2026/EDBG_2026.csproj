@@ -567,9 +567,9 @@
       <Project>{911a2efb-1910-43cc-90a8-f9fb1f59ba31}</Project>
       <Name>Energie.DataAccess</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EDSN2016\EDSN2016.csproj">
+    <ProjectReference Include="..\EDSN2026\EDSN2026.csproj">
       <Project>{500ca4bd-1f45-4b5b-9d15-8d1f44f40d68}</Project>
-      <Name>EDSN2016</Name>
+      <Name>EDSN2026</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
